@@ -1,0 +1,367 @@
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { Mail, Phone, MapPin, Calendar, Upload, Send, Clock, DollarSign } from 'lucide-react';
+
+const ContactPage: React.FC = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    projectType: '',
+    budgetRange: '',
+    deadline: '',
+    message: '',
+    files: null
+  });
+
+  const projectTypes = [
+    'Commercial/Advertisement',
+    'Music Video',
+    'Wedding/Event',
+    'Corporate Video',
+    'Social Media Content',
+    'Documentary',
+    'Other'
+  ];
+
+  const budgetRanges = [
+    'Under $1,000',
+    '$1,000 - $5,000',
+    '$5,000 - $15,000',
+    '$15,000 - $50,000',
+    '$50,000+'
+  ];
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({
+      ...formData,
+      files: e.target.files
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission here
+    console.log('Form submitted:', formData);
+  };
+
+  return (
+    <div className="min-h-screen pt-16">
+      {/* Header */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center"
+          >
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 cinzel">Let's Create Together</h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Ready to bring your vision to life? Let's discuss your project and create something extraordinary
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Contact Form & Info */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-16">
+            {/* Contact Form */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-3xl font-bold mb-8 cinzel">Project Inquiry</h2>
+              
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Name & Email */}
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
+                      placeholder="Your name"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
+                      placeholder="your@email.com"
+                    />
+                  </div>
+                </div>
+
+                {/* Project Type */}
+                <div>
+                  <label htmlFor="projectType" className="block text-sm font-medium text-gray-700 mb-2">
+                    Type of Project *
+                  </label>
+                  <select
+                    id="projectType"
+                    name="projectType"
+                    required
+                    value={formData.projectType}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
+                  >
+                    <option value="">Select project type</option>
+                    {projectTypes.map((type) => (
+                      <option key={type} value={type}>{type}</option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Budget & Deadline */}
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="budgetRange" className="block text-sm font-medium text-gray-700 mb-2">
+                      Budget Range
+                    </label>
+                    <select
+                      id="budgetRange"
+                      name="budgetRange"
+                      value={formData.budgetRange}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
+                    >
+                      <option value="">Select budget range</option>
+                      {budgetRanges.map((range) => (
+                        <option key={range} value={range}>{range}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="deadline" className="block text-sm font-medium text-gray-700 mb-2">
+                      Project Deadline
+                    </label>
+                    <input
+                      type="date"
+                      id="deadline"
+                      name="deadline"
+                      value={formData.deadline}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
+                    />
+                  </div>
+                </div>
+
+                {/* Message */}
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    Project Details *
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    rows={6}
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent resize-none"
+                    placeholder="Tell us about your project, goals, style preferences, and any specific requirements..."
+                  />
+                </div>
+
+                {/* File Upload */}
+                <div>
+                  <label htmlFor="files" className="block text-sm font-medium text-gray-700 mb-2">
+                    Reference Files (Optional)
+                  </label>
+                  <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-gray-400 transition-colors">
+                    <Upload className="w-8 h-8 text-gray-400 mx-auto mb-2" />
+                    <input
+                      type="file"
+                      id="files"
+                      name="files"
+                      multiple
+                      onChange={handleFileChange}
+                      className="hidden"
+                      accept=".jpg,.jpeg,.png,.pdf,.mp4,.mov,.avi"
+                    />
+                    <label htmlFor="files" className="cursor-pointer">
+                      <span className="text-gray-600">Drop files here or click to upload</span>
+                      <br />
+                      <span className="text-sm text-gray-400">PNG, JPG, PDF, MP4 up to 10MB each</span>
+                    </label>
+                  </div>
+                </div>
+
+                {/* Submit Button */}
+                <motion.button
+                  type="submit"
+                  className="w-full bg-gray-800 text-white py-4 px-6 rounded-lg font-semibold hover:bg-gray-700 transition-colors flex items-center justify-center"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Send className="w-5 h-5 mr-2" />
+                  Send Project Inquiry
+                </motion.button>
+              </form>
+            </motion.div>
+
+            {/* Contact Info & Additional Details */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="space-y-8"
+            >
+              {/* Contact Information */}
+              <div className="bg-gray-50 rounded-xl p-8">
+                <h3 className="text-2xl font-semibold mb-6">Get in Touch</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center">
+                    <Mail className="w-5 h-5 text-gray-600 mr-3" />
+                    <span className="text-gray-700">hello@filmmaker.com</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Phone className="w-5 h-5 text-gray-600 mr-3" />
+                    <span className="text-gray-700">+1 (555) 123-4567</span>
+                  </div>
+                  <div className="flex items-center">
+                    <MapPin className="w-5 h-5 text-gray-600 mr-3" />
+                    <span className="text-gray-700">Los Angeles, CA</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Response Time */}
+              <div className="bg-white border border-gray-200 rounded-xl p-8">
+                <h3 className="text-xl font-semibold mb-4 flex items-center">
+                  <Clock className="w-5 h-5 mr-2" />
+                  Response Time
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  I typically respond to project inquiries within 24 hours. For urgent projects, 
+                  feel free to call directly.
+                </p>
+                <div className="text-sm text-gray-500">
+                  Business Hours: Mon-Fri, 9AM-6PM PST
+                </div>
+              </div>
+
+              {/* Pricing Info */}
+              <div className="bg-white border border-gray-200 rounded-xl p-8">
+                <h3 className="text-xl font-semibold mb-4 flex items-center">
+                  <DollarSign className="w-5 h-5 mr-2" />
+                  Pricing & Process
+                </h3>
+                <div className="space-y-3 text-gray-600">
+                  <p>• Free initial consultation (30 minutes)</p>
+                  <p>• Custom quotes based on project scope</p>
+                  <p>• 50% deposit required to start</p>
+                  <p>• Remaining balance due upon completion</p>
+                  <p>• 3 rounds of revisions included</p>
+                </div>
+              </div>
+
+              {/* WhatsApp CTA */}
+              <div className="bg-green-50 border border-green-200 rounded-xl p-8 text-center">
+                <h3 className="text-xl font-semibold mb-4 text-green-800">Quick Chat?</h3>
+                <p className="text-green-700 mb-4">
+                  For quick questions or urgent projects, message me directly on WhatsApp
+                </p>
+                <button className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+                  Message on WhatsApp
+                </button>
+              </div>
+
+              {/* Calendar Booking */}
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-8 text-center">
+                <h3 className="text-xl font-semibold mb-4 text-blue-800 flex items-center justify-center">
+                  <Calendar className="w-5 h-5 mr-2" />
+                  Schedule a Call
+                </h3>
+                <p className="text-blue-700 mb-4">
+                  Book a free 30-minute consultation to discuss your project in detail
+                </p>
+                <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                  Book Consultation
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-6 cinzel">Frequently Asked Questions</h2>
+            <p className="text-xl text-gray-600">
+              Quick answers to common questions
+            </p>
+          </motion.div>
+
+          <div className="space-y-6">
+            {[
+              {
+                q: 'What is your typical turnaround time?',
+                a: 'Turnaround time varies by project complexity. Simple edits: 3-5 days, complex projects: 2-3 weeks. Rush jobs available for additional fee.'
+              },
+              {
+                q: 'Do you work with clients remotely?',
+                a: 'Yes! I work with clients worldwide. All communication and file transfers are handled digitally through secure platforms.'
+              },
+              {
+                q: 'What formats do you deliver in?',
+                a: 'I deliver in any format you need: MP4, MOV, ProRes, and more. Multiple versions optimized for different platforms included.'
+              },
+              {
+                q: 'How many revisions are included?',
+                a: 'All packages include 3 rounds of revisions. Additional revisions available at $150/hour for minor changes.'
+              },
+              {
+                q: 'Do you provide raw footage backup?',
+                a: 'Yes, all project files and raw footage are backed up and stored for 6 months after project completion.'
+              }
+            ].map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white rounded-lg p-6 shadow-sm"
+              >
+                <h3 className="text-lg font-semibold mb-3 text-gray-800">{faq.q}</h3>
+                <p className="text-gray-600">{faq.a}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default ContactPage;
