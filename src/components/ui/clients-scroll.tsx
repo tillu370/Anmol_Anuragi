@@ -8,70 +8,55 @@ interface Client {
   image: string;
   followers: string;
   borderColor: string;
+  instagramUrl: string;
 }
 
 const clients: Client[] = [
   {
     id: 1,
-    name: "Alex Johnson",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-    followers: "546K",
-    borderColor: "border-white"
+    name: "Client 1",
+    image: "/client1.jpg",
+    followers: "249",
+    borderColor: "border-black",
+    instagramUrl: "https://www.instagram.com/ashcarrim/"
   },
   {
     id: 2,
-    name: "Mike Chen",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-    followers: "18.4K",
-    borderColor: "border-blue-400"
+    name: "Client 2",
+    image: "/client2.jpg",
+    followers: "547K",
+    borderColor: "border-black",
+    instagramUrl: "https://www.instagram.com/tarini_shah/reels/"
   },
   {
     id: 3,
-    name: "David Wilson",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
-    followers: "119K",
-    borderColor: "border-white"
+    name: "Client 3",
+    image: "/client3.jpg",
+    followers: "6,382",
+    borderColor: "border-black",
+    instagramUrl: "https://www.instagram.com/typee_studio/reels/"
   },
   {
     id: 4,
-    name: "James Brown",
-    image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=150&h=150&fit=crop&crop=face",
-    followers: "5.7K",
-    borderColor: "border-white"
+    name: "Client 4",
+    image: "/client4.jpg",
+    followers: "6,853",
+    borderColor: "border-black",
+    instagramUrl: "https://www.instagram.com/ambitio.club/"
   },
   {
     id: 5,
-    name: "Ryan Davis",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
-    followers: "4.5K",
-    borderColor: "border-white"
-  },
-  {
-    id: 6,
-    name: "Tom Anderson",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face",
-    followers: "89.2K",
-    borderColor: "border-green-400"
-  },
-  {
-    id: 7,
-    name: "Chris Lee",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face",
-    followers: "23.1K",
-    borderColor: "border-white"
-  },
-  {
-    id: 8,
-    name: "Mark Taylor",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-    followers: "67.8K",
-    borderColor: "border-purple-400"
+    name: "Client 5",
+    image: "/client5.png",
+    followers: "30.4K",
+    borderColor: "border-black",
+    instagramUrl: "https://www.instagram.com/coinwofficial?igsh=Z2RjYXB1c3ZvMW50"
   }
 ];
 
 const ClientsScroll: React.FC = () => {
   return (
-    <section className="py-20 bg-black/50 backdrop-blur-sm">
+    <section className="py-20">
       <div className="max-w-7xl mx-auto px-4">
         
 
@@ -91,6 +76,12 @@ const ClientsScroll: React.FC = () => {
                  transition={{ duration: 0.6, delay: client.id * 0.1 }}
                  className="flex-shrink-0 flex flex-col items-center"
                >
+                <a
+                  href={client.instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cursor-pointer"
+                >
                  <div className={cn(
                    "w-40 h-40 rounded-full overflow-hidden border-2",
                    client.borderColor,
@@ -102,6 +93,10 @@ const ClientsScroll: React.FC = () => {
                      className="w-full h-full object-cover"
                    />
                  </div>
+                </a>
+                <div className="mt-3 text-center">
+                  <p className="text-sm font-semibold text-gray-700">{client.followers} followers</p>
+                </div>
                </motion.div>
              ))}
             
@@ -111,6 +106,12 @@ const ClientsScroll: React.FC = () => {
                  key={`duplicate-${client.id}`}
                  className="flex-shrink-0 flex flex-col items-center"
                >
+                <a
+                  href={client.instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cursor-pointer"
+                >
                  <div className={cn(
                    "w-40 h-40 rounded-full overflow-hidden border-2",
                    client.borderColor,
@@ -121,6 +122,10 @@ const ClientsScroll: React.FC = () => {
                      alt={client.name}
                      className="w-full h-full object-cover"
                    />
+                 </div>
+                </a>
+                 <div className="mt-3 text-center">
+                   <p className="text-sm font-semibold text-gray-700">{client.followers} followers</p>
                  </div>
                </motion.div>
              ))}

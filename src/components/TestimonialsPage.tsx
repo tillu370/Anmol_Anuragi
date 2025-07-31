@@ -4,19 +4,24 @@ import { Volume2, VolumeX, Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    video: '/videos/testimonial1.mp4',
+    video: '/clientvideo1.mp4',
     quote:
-      "We’ve been working with ediore, and their video editing services have consistently exceeded our expectations. The team is incredibly talented, responsive, and always delivers top-notch results on time. Highly recommend them for any video editing needs!",
+      "From the very first video I sent, they understood my vision. They didn't just trim clips or add transitions – they elevated the entire feel of the video. The pacing, the color grading, the music choice, the way everything was synced together – it felt polished and cinematic. It looked like something that would belong on a professional platform, not just YouTube or Instagram",
   },
   {
-    video: '/videos/testimonial2.mp4',
+    video: '/clientvideo2.mp4',
     quote:
-      "Ediore transformed our raw footage into a polished, engaging video that truly captured the essence of our brand. Their creativity, attention to detail, and professionalism made the entire process seamless. The final product was top quality and incredibly engaging. We’re thrilled with the result and we decided to continue working with them.",
+      "What impressed us most was their meticulous attention to detail — from the pacing of scenes and choice of background music to the precision of cuts, on-brand graphic overlays, and subtle sound enhancements — every element felt thoughtfully curated to reflect our brand voice and marketing goals.",
   },
   {
-    video: '/videos/testimonial3.mp4',
+    video: '/clientvideo3.mp4',
     quote:
-      "The team at ediore craft a fresh edit style with a high quality visuals story telling and this way perfectly work on my account. They were receptive to feedback and made revisions promptly. Their dedication to delivering top quality, super engaging videos is evident in every frame. Fantastic experience!",
+      "Before I started working with them, I was doing all my edits myself. And honestly? It was draining. I was spending hours on editing when I should've been focusing on shooting, scripting, or engaging with my audience. I needed help — but not just any help. I needed someone who understood content creation. Someone who knew what hooks, jump cuts, B-roll, and pacing meant in the context of growing a YouTube channel",
+  },
+  {
+    video: '/clientvideo4.mp4',
+    quote:
+      "Ediore's video editing expertise has been game-changing for our content strategy. Their ability to transform raw footage into compelling stories while maintaining our brand identity is remarkable. The quality and creativity they bring to every project is outstanding.",
   },
 ];
 
@@ -27,7 +32,7 @@ function TestimonialCard({ videoSrc, quote }: { videoSrc: string; quote: string 
       <div className="relative">
         <video
           src={videoSrc}
-          className="w-full h-80 object-cover rounded-t-3xl"
+          className="w-full aspect-[9/16] object-cover rounded-t-3xl"
           muted={muted}
           controls
         />

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Calendar, Upload, Send, Clock, DollarSign } from 'lucide-react';
 
@@ -9,6 +9,8 @@ const ContactPage: React.FC = () => {
     projectType: '',
     budgetRange: '',
     deadline: '',
+    meetingDate: '', // new for calendar
+    timeZone: '',    // new for time zone
     message: '',
     files: null as FileList | null
   });
@@ -31,6 +33,17 @@ const ContactPage: React.FC = () => {
     '$50,000+'
   ];
 
+  const timeZones = [
+    'UTC',
+    'America/New_York',
+    'America/Los_Angeles',
+    'Europe/London',
+    'Europe/Paris',
+    'Asia/Kolkata',
+    'Asia/Tokyo',
+    'Australia/Sydney',
+  ];
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
@@ -50,6 +63,16 @@ const ContactPage: React.FC = () => {
     // Handle form submission here
     console.log('Form submitted:', formData);
   };
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <div className="min-h-screen pt-16">
@@ -111,7 +134,7 @@ const ContactPage: React.FC = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent"
-                      placeholder="your@email.com"
+                      placeholder="anmoltypebusiness@gmail.com"
                     />
                   </div>
                 </div>
@@ -237,7 +260,7 @@ const ContactPage: React.FC = () => {
                 <div className="space-y-4">
                   <div className="flex items-center">
                     <Mail className="w-5 h-5 text-gray-600 mr-3" />
-                    <span className="text-gray-700">hello@filmmaker.com</span>
+                    <span className="text-gray-700">anmoltypebusiness@gmail.com</span>
                   </div>
                   <div className="flex items-center">
                     <Phone className="w-5 h-5 text-gray-600 mr-3" />
@@ -250,34 +273,10 @@ const ContactPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Response Time */}
-              <div className="bg-custom-beige border border-gray-200 rounded-xl p-8">
-                <h3 className="text-xl font-semibold mb-4 flex items-center">
-                  <Clock className="w-5 h-5 mr-2" />
-                  Response Time
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  I typically respond to project inquiries within 24 hours. For urgent projects, 
-                  feel free to call directly.
-                </p>
-                <div className="text-sm text-gray-500">
-                  Business Hours: Mon-Fri, 9AM-6PM PST
-                </div>
-              </div>
-
-              {/* Pricing Info */}
-              <div className="bg-custom-beige border border-gray-200 rounded-xl p-8">
-                <h3 className="text-xl font-semibold mb-4 flex items-center">
-                  <DollarSign className="w-5 h-5 mr-2" />
-                  Pricing & Process
-                </h3>
-                <div className="space-y-3 text-gray-600">
-                  <p>• Free initial consultation (30 minutes)</p>
-                  <p>• Custom quotes based on project scope</p>
-                  <p>• 50% deposit required to start</p>
-                  <p>• Remaining balance due upon completion</p>
-                  <p>• 3 rounds of revisions included</p>
-                </div>
+              {/* Calendly Widget */}
+              <div className="bg-white border border-gray-200 rounded-xl p-0 md:p-4 flex flex-col items-center justify-center">
+                <h3 className="text-xl font-semibold mb-4 text-blue-800 flex items-center justify-center pt-6">Book a Call Instantly</h3>
+                <div id="calendly-inline-widget" className="calendly-inline-widget w-full" style={{ minWidth: 320, height: 700 }} data-url="https://calendly.com/tilludeals/30min"></div>
               </div>
 
               {/* WhatsApp CTA */}
@@ -288,20 +287,6 @@ const ContactPage: React.FC = () => {
                 </p>
                 <button className="bg-green-600 text-custom-beige px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
                   Message on WhatsApp
-                </button>
-              </div>
-
-              {/* Calendar Booking */}
-              <div className="bg-blue-50 border border-blue-200 rounded-xl p-8 text-center">
-                <h3 className="text-xl font-semibold mb-4 text-blue-800 flex items-center justify-center">
-                  <Calendar className="w-5 h-5 mr-2" />
-                  Schedule a Call
-                </h3>
-                <p className="text-blue-700 mb-4">
-                  Book a free 30-minute consultation to discuss your project in detail
-                </p>
-                <button className="bg-blue-600 text-custom-beige px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-                  Book Consultation
                 </button>
               </div>
             </motion.div>

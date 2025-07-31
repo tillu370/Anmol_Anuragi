@@ -75,21 +75,21 @@ const ServicesPage: React.FC = () => {
                 icon: Video,
                 title: 'Share the raw videos', 
                 description: 'Our skilled writers will extract the finest moments, ensuring your content shines brightly.',
-                avatar: '👨🏾'
+                avatar: '/avatar1.webp'
               },
               { 
                 step: '02', 
                 icon: Sparkles,
                 title: 'Create a unique edit style', 
                 description: 'Let our team of animators and video artists bring your brand to life with a bespoke style that captures its essence and captivates your audience.',
-                avatar: '👩🏽'
+                avatar: '/avatar2.webp'
               },
               { 
                 step: '03', 
                 icon: TrendingUp,
                 title: 'Grow Through Packaging', 
                 description: 'Our skilled managers and copywriters craft captivating hooks designed to halt scrolling and leave viewers mesmerized, ensuring your content commands attention.',
-                avatar: '👨🏼'
+                avatar: '/avatar3.webp'
               }
             ].map((process, index) => (
               <motion.div
@@ -120,7 +120,7 @@ const ServicesPage: React.FC = () => {
                 {/* Avatar at bottom */}
                 <div className="absolute bottom-4 right-4 w-20 h-20 flex items-end justify-end relative z-10">
                   <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-full p-2 shadow-lg">
-                    <span className="text-4xl">{process.avatar}</span>
+                    <img src={process.avatar} alt="Avatar" className="w-16 h-16 rounded-full object-cover" />
                   </div>
                 </div>
 

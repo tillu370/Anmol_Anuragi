@@ -4,10 +4,10 @@ import { Award, Clock, Users, Zap } from 'lucide-react';
 
 const AboutPage: React.FC = () => {
   const stats = [
-    { icon: Clock, number: '5+', label: 'Years Editing' },
-    { icon: Users, number: '200+', label: 'Total Projects' },
+    { icon: Clock, number: '1.5+', label: 'Years Editing' },
+    { icon: Users, number: '100+', label: 'Total Projects' },
     { icon: Award, number: '10K+', label: 'Hours Cut' },
-    { icon: Zap, number: '95%', label: 'Client Satisfaction' },
+    { icon: Zap, number: '100%', label: 'Client Satisfaction' },
   ];
 
   return (

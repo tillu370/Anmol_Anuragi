@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { Play, ArrowRight, Film, Video, Users, Eye } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Navigation } from 'swiper/modules';
@@ -32,6 +32,41 @@ const featuredVideos = [
     description: '',
   },
 ];
+
+function FAQItem({ question, answer, defaultOpen = false }: { question: string, answer: string, defaultOpen?: boolean }) {
+  const [open, setOpen] = useState(defaultOpen);
+  return (
+    <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
+      <button
+        className="w-full flex justify-between items-center px-6 py-5 text-lg font-semibold text-gray-900 focus:outline-none hover:bg-gray-50 transition"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+      >
+        <span>{question}</span>
+        <motion.span
+          animate={{ rotate: open ? 180 : 0 }}
+          className="ml-2 text-blue-500"
+        >
+          <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </motion.span>
+      </button>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            key="content"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="px-6 pb-5 text-gray-600"
+          >
+            {answer}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
 
 const HomePage: React.FC = () => {
   const floatingTexts = ['Reels', 'Trailers', 'Promos', 'Stories'];
@@ -184,6 +219,54 @@ const HomePage: React.FC = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <section className="py-24 bg-gradient-to-br from-white via-gray-50 to-blue-50 border-t border-b">
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <h2 className="text-5xl md:text-6xl font-extrabold mb-4 text-gray-900 tracking-tight drop-shadow-lg">Frequently asked questions.</h2>
+          <p className="text-lg text-gray-600 mb-14 max-w-2xl mx-auto">Navigate through our comprehensive FAQ section for swift solutions to common queries, ensuring a seamless experience and addressing your concerns with clarity and efficiency. Your satisfaction is our priority.</p>
+          <div className="space-y-6 text-left">
+            {/* FAQ Accordion */}
+            {[{
+              q: 'How does 7 days free trial works?',
+              a: 'You get full access to all features for 7 days. Cancel anytime within the trial period to avoid charges.'
+            }, {
+              q: 'Are my Edit style unique to my account only?',
+              a: 'Yes, your edit styles are personalized and exclusive to your account for your creative needs.'
+            }, {
+              q: 'What happen if I cancel the plan.',
+              a: 'You will retain access until the end of your billing cycle. After that, premium features will be disabled.'
+            }, {
+              q: 'Can you guarantee results?',
+              a: 'While we strive for the best, results depend on various factors. We are committed to your satisfaction and support.'
+            }].map((item, idx) => (
+              <FAQItem key={item.q} question={item.q} answer={item.a} defaultOpen={idx === 0} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-white border-t mt-10">
+        <div className="max-w-7xl mx-auto px-4 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-2">
+            {/* Logo as text */}
+            <span className="font-extrabold text-2xl tracking-tight">Ediore</span>
+            <span className="ml-4 flex gap-3">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80"><svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line></svg></a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80"><svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+            </span>
+          </div>
+          <div className="text-gray-600 text-sm flex flex-col md:flex-row items-center gap-2">
+            <span>Say Hi at <a href="mailto:anmoltypebusiness@gmail.com" className="underline hover:text-black">anmoltypebusiness@gmail.com</a></span>
+            <span className="hidden md:inline-block mx-2">|</span>
+            <a href="#" className="hover:underline">Privacy Policy</a>
+            <span className="hidden md:inline-block mx-2">|</span>
+            <a href="#" className="hover:underline">Terms of Use</a>
+          </div>
+          <div className="text-gray-400 text-xs text-center md:text-right">Designed & Developed by - Grafixcart</div>
+        </div>
+      </footer>
     </div>
   );
 };
