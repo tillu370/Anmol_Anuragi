@@ -53,7 +53,7 @@ const demoPlans = [
 
 function PricingBasic() {
   return (
-    <div className="h-[800px] overflow-y-auto rounded-lg">
+    <div className="rounded-lg">
       <Pricing 
         plans={demoPlans}
         title="Simple, Transparent Pricing"

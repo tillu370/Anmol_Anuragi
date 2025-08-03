@@ -8,15 +8,7 @@ import { cn } from '../../lib/utils';
 const FilmmakerHero: React.FC = () => {
   const fadeUpVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        delay: 0.5 + i * 0.2,
-        ease: [0.25, 0.4, 0.25, 1],
-      },
-    }),
+    visible: { opacity: 1, y: 0 },
   };
 
   return (
@@ -96,7 +88,7 @@ const FilmmakerHero: React.FC = () => {
       </div>
 
       <div className="relative z-10 container mx-auto px-4 md:px-6">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center mt-16">
           <motion.div
             custom={0}
             variants={fadeUpVariants}
@@ -118,17 +110,17 @@ const FilmmakerHero: React.FC = () => {
           >
                          <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 md:mb-8 tracking-tight">
                <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80 text-2xl sm:text-3xl md:text-4xl font-medium">
-                 You Shoot
+                 Grow your Personal Brand
                </span>
                <br />
                <span className={cn(
                  "bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 text-5xl sm:text-7xl md:text-9xl font-bold"
                )}>
-                 I Shape It
+                 With Dynamic
                </span>
                <br />
                <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80 text-2xl sm:text-3xl md:text-4xl font-medium">
-                 Into Something Worth Watching
+                 High-Quality Video Content
                </span>
              </h1>
           </motion.div>
@@ -140,18 +132,11 @@ const FilmmakerHero: React.FC = () => {
             variants={fadeUpVariants}
             initial="hidden"
             animate="visible"
-            className="flex flex-col sm:flex-row gap-6 justify-center"
+            className="flex justify-center"
           >
             <Link
-              to="/portfolio"
-              className="bg-white/10 backdrop-blur-md text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-all duration-300 flex items-center justify-center border border-white/20"
-            >
-              <Play className="w-5 h-5 mr-2" />
-              View Portfolio
-            </Link>
-            <Link
               to="/contact"
-              className="border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-all duration-300 flex items-center justify-center backdrop-blur-md"
+              className="border-2 border-white/30 text-white px-12 py-4 rounded-lg font-semibold hover:bg-white/10 transition-all duration-300 flex items-center justify-center backdrop-blur-md"
             >
               Schedule 15Min Google Meet
               <ArrowRight className="w-5 h-5 ml-2" />

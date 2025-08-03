@@ -9,6 +9,10 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation';
 import FilmmakerHero from './ui/filmmaker-hero';
 import ClientsScroll from './ui/clients-scroll';
+import ServicesPage from './ServicesPage';
+import TestimonialsPage from './TestimonialsPage';
+import ContactPage from './ContactPage';
+import CountUp from 'react-countup';
 
 const featuredVideos = [
   {
@@ -88,10 +92,17 @@ const HomePage: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <FilmmakerHero />
+      <div id="hero">
+        <FilmmakerHero />
+      </div>
+
+      {/* Fade Transition */}
+      <div className="relative h-24 bg-gradient-to-b from-black via-black/95 via-black/85 via-black/70 via-black/50 via-black/30 via-black/15 to-white/5">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/80 via-black/60 via-black/40 via-black/20 via-black/5 to-transparent"></div>
+      </div>
 
       {/* Quick Stats */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -119,8 +130,79 @@ const HomePage: React.FC = () => {
       {/* Clients Scroll Section */}
       <ClientsScroll />
 
+      {/* Statistics Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 cinzel text-black">
+              Unveiling Our Footprint
+            </h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="bg-white rounded-2xl border-2 border-black p-8 md:p-12"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Left Statistic */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-center"
+              >
+                <div className="text-4xl md:text-6xl font-bold text-black mb-2">
+                  <CountUp end={24018256} duration={2.5} separator="," />
+                </div>
+                <div className="text-lg text-gray-700 mb-4">
+                  Organic Views
+                </div>
+                <div className="flex justify-center">
+                  <div className="w-3 h-3 bg-black rounded-full animate-pulse"></div>
+                </div>
+              </motion.div>
+
+              {/* Divider */}
+              <div className="hidden md:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-px h-16 bg-black/20"></div>
+
+              {/* Right Statistic */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="text-center"
+              >
+                <div className="text-4xl md:text-6xl font-bold text-black mb-2">
+                  <CountUp end={100000} duration={2.5} separator="," />+
+                </div>
+                <div className="text-lg text-gray-700 mb-4">
+                  Followers
+                </div>
+              </motion.div>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="text-center mt-8"
+            >
+              <p className="text-xl text-black font-medium">
+                and Counting
+              </p>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Featured Work Preview */}
-      <section className="py-20">
+      <section className="py-20 mb-16">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -137,14 +219,14 @@ const HomePage: React.FC = () => {
 
           {/* Video Grid Layout */}
           <div className="w-full flex justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl">
               {/* Video 1 */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: -80 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
                 style={{ y: video1Y }}
-                className="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center"
+                className="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-42"
               >
                 <video
                   src={featuredVideos[0].url}
@@ -160,7 +242,7 @@ const HomePage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 30 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 style={{ y: video2Y }}
-                className="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center"
+                className="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-42"
               >
                 <video
                   src={featuredVideos[1].url}
@@ -176,7 +258,7 @@ const HomePage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 30 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 style={{ y: video3Y }}
-                className="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center"
+                className="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-42"
               >
                 <video
                   src={featuredVideos[2].url}
@@ -192,7 +274,7 @@ const HomePage: React.FC = () => {
                 whileInView={{ opacity: 1, y: -80 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 style={{ y: video4Y }}
-                className="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center"
+                className="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-42"
               >
                 <video
                   src={featuredVideos[3].url}
@@ -220,30 +302,19 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-24 bg-gradient-to-br from-white via-gray-50 to-blue-50 border-t border-b">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-5xl md:text-6xl font-extrabold mb-4 text-gray-900 tracking-tight drop-shadow-lg">Frequently asked questions.</h2>
-          <p className="text-lg text-gray-600 mb-14 max-w-2xl mx-auto">Navigate through our comprehensive FAQ section for swift solutions to common queries, ensuring a seamless experience and addressing your concerns with clarity and efficiency. Your satisfaction is our priority.</p>
-          <div className="space-y-6 text-left">
-            {/* FAQ Accordion */}
-            {[{
-              q: 'How does 7 days free trial works?',
-              a: 'You get full access to all features for 7 days. Cancel anytime within the trial period to avoid charges.'
-            }, {
-              q: 'Are my Edit style unique to my account only?',
-              a: 'Yes, your edit styles are personalized and exclusive to your account for your creative needs.'
-            }, {
-              q: 'What happen if I cancel the plan.',
-              a: 'You will retain access until the end of your billing cycle. After that, premium features will be disabled.'
-            }, {
-              q: 'Can you guarantee results?',
-              a: 'While we strive for the best, results depend on various factors. We are committed to your satisfaction and support.'
-            }].map((item, idx) => (
-              <FAQItem key={item.q} question={item.q} answer={item.a} defaultOpen={idx === 0} />
-            ))}
-          </div>
-        </div>
+      {/* Services Section */}
+      <section id="services" className="mb-16">
+        <ServicesPage />
+      </section>
+
+      {/* Testimonials Section */}
+      <section id="testimonials" className="mb-16">
+        <TestimonialsPage />
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="mb-16">
+        <ContactPage />
       </section>
 
       {/* Footer */}

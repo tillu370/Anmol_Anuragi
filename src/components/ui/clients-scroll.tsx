@@ -47,23 +47,20 @@ const clients: Client[] = [
   {
     id: 5,
     name: "Client 5",
-    image: "/client5.png",
+            image: "/client5.jpg",
     followers: "30.4K",
     borderColor: "border-black",
-    instagramUrl: "https://www.instagram.com/coinwofficial?igsh=Z2RjYXB1c3ZvMW50"
+    instagramUrl: "https://m.youtube.com/@CoinWOfficial/videos?fbclid=PAQ0xDSwL77LRleHRuA2FlbQIxMAABp3onqmuwdfNrI93Ftb9RjtA67JblyH8Y6_yyl3a1cOYF7oCQgOvt4C-5clvf_aem_xkiQnNlZhj_RQzDpNZwqzg#searching"
   }
 ];
 
 const ClientsScroll: React.FC = () => {
   return (
     <section className="py-20">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="w-full">
         
 
         <div className="relative overflow-hidden">
-          {/* Gradient overlays for smooth fade effect */}
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-black/50 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-black/50 to-transparent z-10 pointer-events-none" />
           
           {/* Scrolling container */}
           <div className="flex gap-8 animate-scroll">
@@ -81,11 +78,11 @@ const ClientsScroll: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="cursor-pointer"
-                >
+               >
                  <div className={cn(
                    "w-40 h-40 rounded-full overflow-hidden border-2",
                    client.borderColor,
-                   "shadow-lg hover:scale-105 transition-transform duration-300"
+                   "hover:scale-105 transition-transform duration-300"
                  )}>
                    <img
                      src={client.image}
@@ -96,7 +93,7 @@ const ClientsScroll: React.FC = () => {
                 </a>
                 <div className="mt-3 text-center">
                   <p className="text-sm font-semibold text-gray-700">{client.followers} followers</p>
-                </div>
+                 </div>
                </motion.div>
              ))}
             
@@ -111,11 +108,11 @@ const ClientsScroll: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="cursor-pointer"
-                >
+               >
                  <div className={cn(
                    "w-40 h-40 rounded-full overflow-hidden border-2",
                    client.borderColor,
-                   "shadow-lg hover:scale-105 transition-transform duration-300"
+                   "hover:scale-105 transition-transform duration-300"
                  )}>
                    <img
                      src={client.image}

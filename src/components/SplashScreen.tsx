@@ -105,13 +105,7 @@ const SplashScreen: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* Glitch Effect */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: [0, 0.3, 0] }}
-          transition={{ delay: 2, duration: 0.2, repeat: 3 }}
-          className="absolute inset-0 bg-red-500 mix-blend-multiply"
-        />
+
       </div>
     </div>
   );

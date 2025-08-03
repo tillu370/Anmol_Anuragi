@@ -61,7 +61,7 @@ function TestimonialCard({ videoSrc, quote }: { videoSrc: string; quote: string 
 
 const TestimonialsPage: React.FC = () => {
   return (
-    <div className="min-h-screen pt-16 bg-white">
+    <div className="min-h-screen bg-white pt-16">
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
