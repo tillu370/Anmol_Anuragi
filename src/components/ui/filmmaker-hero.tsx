@@ -108,18 +108,18 @@ const FilmmakerHero: React.FC = () => {
             initial="hidden"
             animate="visible"
           >
-                         <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 md:mb-8 tracking-tight px-4">
-                               <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
+                         <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-8xl font-bold mb-4 md:mb-8 tracking-tight px-2 sm:px-4">
+                               <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80 text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold">
                   Grow your
                 </span>
                <br />
                                <span className={cn(
-                  "bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 text-3xl sm:text-5xl md:text-7xl lg:text-9xl font-bold whitespace-nowrap"
+                  "bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 text-2xl sm:text-4xl md:text-6xl lg:text-8xl font-bold"
                 )}>
                   Personal Brand
                 </span>
                <br />
-                               <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80 text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold whitespace-nowrap">
+                               <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80 text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold">
                   With Dynamic,High-Quality Video Content
                 </span>
              </h1>

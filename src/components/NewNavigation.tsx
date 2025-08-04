@@ -42,11 +42,11 @@ const NewNavigation: React.FC = () => {
       <motion.div
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className="fixed bottom-4 md:bottom-6 left-4 md:left-6 z-50"
+        className="fixed bottom-2 md:bottom-4 lg:bottom-6 left-2 md:left-4 lg:left-6 z-50"
       >
-        <div className="flex items-center space-x-2 bg-white/90 backdrop-blur-md px-3 md:px-4 py-2 rounded-full shadow-lg border border-gray-200">
-          <Play className="w-5 h-5 md:w-6 md:h-6 text-gray-800" />
-          <span className="text-sm md:text-lg font-bold cinzel text-gray-800">Anmol Anuragi</span>
+        <div className="flex items-center space-x-1 md:space-x-2 bg-white/90 backdrop-blur-md px-2 md:px-3 lg:px-4 py-1 md:py-2 rounded-full shadow-lg border border-gray-200">
+          <Play className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-gray-800" />
+          <span className="text-xs md:text-sm lg:text-lg font-bold cinzel text-gray-800">Anmol Anuragi</span>
         </div>
       </motion.div>
 

@@ -124,9 +124,9 @@ const HomePage: React.FC = () => {
       </div>
 
       {/* Quick Stats */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <section className="py-12 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
             {[
               { icon: Film, number: '100+', label: 'Projects Completed' },
               { icon: Video, number: '1.5+', label: 'Years Experience' },
@@ -140,9 +140,9 @@ const HomePage: React.FC = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="text-center"
               >
-                <stat.icon className="w-12 h-12 mx-auto mb-4 text-gray-600" />
-                <div className="text-4xl font-bold text-gray-800 mb-2">{stat.number}</div>
-                <div className="text-gray-600">{stat.label}</div>
+                <stat.icon className="w-8 h-8 md:w-12 md:h-12 mx-auto mb-2 md:mb-4 text-gray-600" />
+                <div className="text-2xl md:text-4xl font-bold text-gray-800 mb-1 md:mb-2">{stat.number}</div>
+                <div className="text-xs md:text-sm text-gray-600">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -279,15 +279,15 @@ const HomePage: React.FC = () => {
              </p>
            </motion.div>
 
-           {/* Video Grid Layout */}
-           <div className="w-full flex justify-center">
-             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 max-w-4xl">
+                       {/* Video Grid Layout */}
+            <div className="w-full flex justify-center">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-8 max-w-4xl">
                                                {/* Video 1 */}
                  <motion.div
                    initial={{ opacity: 0, y: 30 }}
                    whileInView={{ opacity: 1, y: 0 }}
                    transition={{ duration: 0.6, delay: 0.1 }}
-                   className="aspect-[9/16] bg-black rounded-xl md:rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-40 md:max-w-48 transform rotate-6 md:rotate-12 -mt-4 md:-mt-8 border-2 md:border-4 border-black"
+                                       className="aspect-[9/16] bg-black rounded-lg md:rounded-xl lg:rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-32 md:max-w-40 lg:max-w-48 transform rotate-3 md:rotate-6 lg:rotate-12 -mt-2 md:-mt-4 lg:-mt-8 border-2 md:border-4 border-black"
                  >
                    <video
                      src={featuredVideos[0].url}
@@ -302,7 +302,7 @@ const HomePage: React.FC = () => {
                    initial={{ opacity: 0, y: 30 }}
                    whileInView={{ opacity: 1, y: 0 }}
                    transition={{ duration: 0.6, delay: 0.2 }}
-                   className="aspect-[9/16] bg-black rounded-xl md:rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-40 md:max-w-48 transform -rotate-6 md:-rotate-12 mt-4 md:mt-8 border-2 md:border-4 border-black"
+                                       className="aspect-[9/16] bg-black rounded-lg md:rounded-xl lg:rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-32 md:max-w-40 lg:max-w-48 transform -rotate-3 md:-rotate-6 lg:-rotate-12 mt-2 md:mt-4 lg:mt-8 border-2 md:border-4 border-black"
                  >
                    <video
                      src={featuredVideos[1].url}
@@ -317,7 +317,7 @@ const HomePage: React.FC = () => {
                    initial={{ opacity: 0, y: 30 }}
                    whileInView={{ opacity: 1, y: 0 }}
                    transition={{ duration: 0.6, delay: 0.3 }}
-                   className="aspect-[9/16] bg-black rounded-xl md:rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-40 md:max-w-48 transform rotate-6 md:rotate-12 mt-4 md:mt-8 border-2 md:border-4 border-black"
+                                       className="aspect-[9/16] bg-black rounded-lg md:rounded-xl lg:rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-32 md:max-w-40 lg:max-w-48 transform rotate-3 md:rotate-6 lg:rotate-12 mt-2 md:mt-4 lg:mt-8 border-2 md:border-4 border-black"
                  >
                    <video
                      src={featuredVideos[2].url}
@@ -332,7 +332,7 @@ const HomePage: React.FC = () => {
                    initial={{ opacity: 0, y: 30 }}
                    whileInView={{ opacity: 1, y: 0 }}
                    transition={{ duration: 0.6, delay: 0.4 }}
-                   className="aspect-[9/16] bg-black rounded-xl md:rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-40 md:max-w-48 transform -rotate-6 md:-rotate-12 -mt-4 md:-mt-8 border-2 md:border-4 border-black"
+                                       className="aspect-[9/16] bg-black rounded-lg md:rounded-xl lg:rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-32 md:max-w-40 lg:max-w-48 transform -rotate-3 md:-rotate-6 lg:-rotate-12 -mt-2 md:-mt-4 lg:-mt-8 border-2 md:border-4 border-black"
                  >
                    <video
                      src={featuredVideos[3].url}
@@ -377,9 +377,9 @@ const HomePage: React.FC = () => {
 
              {/* Footer */}
        <footer className="bg-white border-t mt-10">
-         <div className="max-w-7xl mx-auto px-4 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 md:py-10 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
            {/* Center - Email and Privacy Links */}
-           <div className="text-gray-600 text-sm flex flex-col md:flex-row items-center gap-2 order-2 md:order-1 justify-center">
+           <div className="text-gray-600 text-xs md:text-sm flex flex-col md:flex-row items-center gap-1 md:gap-2 order-2 md:order-1 justify-center text-center">
              <span>Say Hi at <a href="mailto:anmoltypebusiness@gmail.com" className="underline hover:text-black">anmoltypebusiness@gmail.com</a></span>
              <span className="hidden md:inline-block mx-2">|</span>
              <a href="#" className="hover:underline">Privacy Policy</a>
@@ -388,17 +388,17 @@ const HomePage: React.FC = () => {
            </div>
            
            {/* Right - Logo and Social Icons */}
-           <div className="flex items-center gap-3 order-3">
-             <span className="font-extrabold text-2xl tracking-tight">typestudio</span>
+           <div className="flex items-center gap-2 md:gap-3 order-3">
+             <span className="font-extrabold text-lg md:text-2xl tracking-tight">typestudio</span>
              <a href="https://www.instagram.com/anmol_type/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
-               <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-instagram">
+               <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-instagram">
                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                  <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
                </svg>
              </a>
              <a href="https://www.youtube.com/@Anmol_type" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
-               <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-youtube">
+               <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-youtube">
                  <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.94C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 1.94A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.94 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path>
                  <polygon points="9.75,15.02 15.5,11.75 9.75,8.48 9.75,15.02"></polygon>
                </svg>

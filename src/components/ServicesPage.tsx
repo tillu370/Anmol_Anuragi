@@ -68,7 +68,7 @@ const ServicesPage: React.FC = () => {
             </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto">
             {[
                              { 
                  step: '01', 
@@ -98,32 +98,32 @@ const ServicesPage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -10, scale: 1.02 }}
-                className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 text-gray-800 relative overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-black"
-                style={{ minHeight: '400px' }}
+                className="bg-white rounded-xl md:rounded-2xl lg:rounded-3xl p-4 md:p-6 lg:p-8 text-gray-800 relative overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-black"
+                style={{ minHeight: '350px' }}
               >
                 {/* Step Number and Icon */}
-                <div className="flex items-center mb-6 md:mb-8 relative z-10">
-                  <div className="w-12 h-12 md:w-16 md:h-16 bg-black rounded-xl md:rounded-2xl flex items-center justify-center mr-4 md:mr-6 shadow-lg">
-                    <span className="text-lg md:text-2xl font-bold text-white">{process.step}</span>
+                <div className="flex items-center mb-4 md:mb-6 lg:mb-8 relative z-10">
+                  <div className="w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 bg-black rounded-lg md:rounded-xl lg:rounded-2xl flex items-center justify-center mr-3 md:mr-4 lg:mr-6 shadow-lg">
+                    <span className="text-base md:text-lg lg:text-2xl font-bold text-white">{process.step}</span>
                   </div>
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-gray-100 rounded-lg md:rounded-xl flex items-center justify-center shadow-md">
-                    <process.icon className="w-5 h-5 md:w-6 md:h-6 text-gray-800" />
+                  <div className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-gray-100 rounded-md md:rounded-lg lg:rounded-xl flex items-center justify-center shadow-md">
+                    <process.icon className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-gray-800" />
                   </div>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-gray-800 relative z-10">{process.title}</h3>
+                <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-3 md:mb-4 lg:mb-6 text-gray-800 relative z-10">{process.title}</h3>
 
                 {/* Description */}
-                <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-6 md:mb-8 relative z-10">{process.description}</p>
+                <p className="text-gray-600 text-xs md:text-sm lg:text-base leading-relaxed mb-4 md:mb-6 lg:mb-8 relative z-10">{process.description}</p>
 
                                  {/* Avatar at bottom */}
-                 <div className={`absolute -right-2 w-32 h-32 md:w-45 md:h-45 flex items-end justify-end relative z-10 ${
-                   process.step === '01' ? '-bottom-20 md:-bottom-32' : 
-                   process.step === '02' ? '-bottom-20 md:-bottom-32' : 
-                   '-bottom-16 md:-bottom-28'
+                 <div className={`absolute -right-2 w-24 h-24 md:w-32 md:h-32 lg:w-45 lg:h-45 flex items-end justify-end relative z-10 ${
+                   process.step === '01' ? '-bottom-16 md:-bottom-20 lg:-bottom-32' : 
+                   process.step === '02' ? '-bottom-16 md:-bottom-20 lg:-bottom-32' : 
+                   '-bottom-12 md:-bottom-16 lg:-bottom-28'
                  }`}>
-                   <img src={process.avatar} alt="Avatar" className="w-32 h-32 md:w-45 md:h-45 object-contain" />
+                   <img src={process.avatar} alt="Avatar" className="w-24 h-24 md:w-32 md:h-32 lg:w-45 lg:h-45 object-contain" />
                  </div>
 
                 {/* Decorative elements */}
