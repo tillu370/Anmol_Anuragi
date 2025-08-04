@@ -28,7 +28,7 @@ const testimonials = [
 function TestimonialCard({ videoSrc, quote }: { videoSrc: string; quote: string }) {
   const [muted, setMuted] = useState(true);
   return (
-    <div className="bg-white rounded-3xl shadow-xl flex flex-col overflow-hidden max-w-xs mx-auto">
+    <div className="bg-white rounded-3xl shadow-xl flex flex-col overflow-hidden max-w-sm mx-auto">
       <div className="relative">
         <video
           src={videoSrc}
@@ -37,23 +37,23 @@ function TestimonialCard({ videoSrc, quote }: { videoSrc: string; quote: string 
           controls
         />
         <button
-          className="absolute top-2 left-1/2 -translate-x-1/2 bg-black/70 text-white rounded-full px-4 py-1 text-xs font-semibold"
+          className="absolute top-3 left-1/2 -translate-x-1/2 bg-black/70 text-white rounded-full px-5 py-2 text-sm font-semibold"
           onClick={() => setMuted((m) => !m)}
         >
           {muted ? (
             <>
-              <VolumeX className="inline w-4 h-4 mr-1" /> Unmute
+              <VolumeX className="inline w-5 h-5 mr-1" /> Unmute
             </>
           ) : (
             <>
-              <Volume2 className="inline w-4 h-4 mr-1" /> Mute
+              <Volume2 className="inline w-5 h-5 mr-1" /> Mute
             </>
           )}
         </button>
         </div>
-      <div className="p-6 flex-1 flex flex-col justify-between">
-        <Quote className="w-6 h-6 text-gray-400 mb-2" />
-        <p className="text-gray-700 text-base leading-relaxed">{quote}</p>
+      <div className="p-8 flex-1 flex flex-col justify-between">
+        <Quote className="w-8 h-8 text-gray-400 mb-3" />
+        <p className="text-gray-700 text-lg leading-relaxed">{quote}</p>
           </div>
         </div>
   );
@@ -62,19 +62,19 @@ function TestimonialCard({ videoSrc, quote }: { videoSrc: string; quote: string 
 const TestimonialsPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-white pt-16">
-      <section className="py-20">
+      <section className="py-32">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 cinzel text-gray-800">Testimonials</h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Real stories from real clients about their experience and results
+            <h1 className="text-6xl md:text-7xl font-bold mb-8 cinzel text-gray-800">Testimonials</h1>
+            <p className="text-2xl text-gray-600 max-w-4xl mx-auto">
+              Trusted By Clients, Proven By Stories
             </p>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
             {testimonials.map((t, i) => (
               <TestimonialCard key={i} videoSrc={t.video} quote={t.quote} />
             ))}

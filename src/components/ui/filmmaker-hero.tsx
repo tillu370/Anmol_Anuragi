@@ -109,19 +109,19 @@ const FilmmakerHero: React.FC = () => {
             animate="visible"
           >
                          <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 md:mb-8 tracking-tight">
-               <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80 text-2xl sm:text-3xl md:text-4xl font-medium">
-                 Grow your Personal Brand
-               </span>
+                               <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80 text-3xl sm:text-4xl md:text-5xl font-bold">
+                  Grow your
+                </span>
                <br />
-               <span className={cn(
-                 "bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 text-5xl sm:text-7xl md:text-9xl font-bold"
-               )}>
-                 With Dynamic
-               </span>
+                               <span className={cn(
+                  "bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 text-5xl sm:text-7xl md:text-9xl font-bold whitespace-nowrap"
+                )}>
+                  Personal Brand
+                </span>
                <br />
-               <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80 text-2xl sm:text-3xl md:text-4xl font-medium">
-                 High-Quality Video Content
-               </span>
+                               <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80 text-3xl sm:text-4xl md:text-5xl font-bold whitespace-nowrap">
+                  With Dynamic,High-Quality Video Content
+                </span>
              </h1>
           </motion.div>
 

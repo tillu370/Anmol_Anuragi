@@ -63,34 +63,34 @@ const ServicesPage: React.FC = () => {
           >
             <div className="flex items-center justify-center mb-6">
               <h2 className="text-4xl md:text-5xl font-bold cinzel">
-                Three Ways to Energize Your Social Media Presence
+                Streamlined Steps To Skyrocket Your Brand!
               </h2>
             </div>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
-              { 
-                step: '01', 
-                icon: Video,
-                title: 'Share the raw videos', 
-                description: 'Our skilled writers will extract the finest moments, ensuring your content shines brightly.',
-                avatar: '/avatar1.webp'
-              },
-              { 
-                step: '02', 
-                icon: Sparkles,
-                title: 'Create a unique edit style', 
-                description: 'Let our team of animators and video artists bring your brand to life with a bespoke style that captures its essence and captivates your audience.',
-                avatar: '/avatar2.webp'
-              },
-              { 
-                step: '03', 
-                icon: TrendingUp,
-                title: 'Grow Through Packaging', 
-                description: 'Our skilled managers and copywriters craft captivating hooks designed to halt scrolling and leave viewers mesmerized, ensuring your content commands attention.',
-                avatar: '/avatar3.webp'
-              }
+                             { 
+                 step: '01', 
+                 icon: Video,
+                 title: 'Share the raw videos', 
+                 description: 'Our skilled writers will extract the finest moments, ensuring your content shines brightly.',
+                 avatar: '/avatar1.png'
+               },
+               { 
+                 step: '02', 
+                 icon: Sparkles,
+                 title: 'Create a unique edit style', 
+                 description: 'Let our team of animators and video artists bring your brand to life with a bespoke style that captures its essence and captivates your audience.',
+                 avatar: '/avatar2.png'
+               },
+               { 
+                 step: '03', 
+                 icon: TrendingUp,
+                 title: 'Grow Through Packaging', 
+                 description: 'Our skilled managers and copywriters craft captivating hooks designed to halt scrolling and leave viewers mesmerized, ensuring your content commands attention.',
+                 avatar: '/avatar3.png'
+               }
             ].map((process, index) => (
               <motion.div
                 key={process.step}
@@ -117,12 +117,14 @@ const ServicesPage: React.FC = () => {
                 {/* Description */}
                 <p className="text-gray-600 text-base leading-relaxed mb-8 relative z-10">{process.description}</p>
 
-                {/* Avatar at bottom */}
-                <div className="absolute bottom-4 right-4 w-20 h-20 flex items-end justify-end relative z-10">
-                  <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-full p-2 shadow-lg">
-                    <img src={process.avatar} alt="Avatar" className="w-16 h-16 rounded-full object-cover" />
-                  </div>
-                </div>
+                                 {/* Avatar at bottom */}
+                 <div className={`absolute -right-2 w-45 h-45 flex items-end justify-end relative z-10 ${
+                   process.step === '01' ? '-bottom-32' : 
+                   process.step === '02' ? '-bottom-32' : 
+                   '-bottom-28'
+                 }`}>
+                   <img src={process.avatar} alt="Avatar" className="w-45 h-45 object-contain" />
+                 </div>
 
                 {/* Decorative elements */}
                 <div className="absolute top-4 right-4 w-2 h-2 bg-gray-300 rounded-full opacity-50"></div>
@@ -131,10 +133,7 @@ const ServicesPage: React.FC = () => {
             ))}
           </div>
 
-          {/* Update Notice */}
-          <div className="text-center mt-16">
-            <p className="text-lg text-gray-500 font-semibold">Services will be updated soon.</p>
-          </div>
+
         </div>
       </section>
 

@@ -56,7 +56,7 @@ function PricingBasic() {
     <div className="rounded-lg">
       <Pricing 
         plans={demoPlans}
-        title="Simple, Transparent Pricing"
+        title="Subscribe today, and begin your growth journey tomorrow"
         description={`Choose the plan that works for you\nAll plans include access to our platform, lead generation tools, and dedicated support.`}
       />
     </div>

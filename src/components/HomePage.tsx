@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { Play, ArrowRight, Film, Video, Users, Eye } from 'lucide-react';
@@ -75,6 +75,8 @@ function FAQItem({ question, answer, defaultOpen = false }: { question: string, 
 const HomePage: React.FC = () => {
   const floatingTexts = ['Reels', 'Trailers', 'Promos', 'Stories'];
   const [current, setCurrent] = useState(0);
+  const [isCountingStarted, setIsCountingStarted] = useState(false);
+  const statsSectionRef = useRef<HTMLElement>(null);
 
   const next = () => setCurrent((prev) => (prev + 1) % featuredVideos.length);
   const prev = () => setCurrent((prev) => (prev - 1 + featuredVideos.length) % featuredVideos.length);
@@ -86,6 +88,26 @@ const HomePage: React.FC = () => {
   const video2Y = useTransform(scrollYProgress, [0, 1], [0, 15]);
   const video3Y = useTransform(scrollYProgress, [0, 1], [0, 15]);
   const video4Y = useTransform(scrollYProgress, [0, 1], [0, -20]);
+
+  // Intersection Observer for counting animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsCountingStarted(true);
+        } else {
+          setIsCountingStarted(false);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (statsSectionRef.current) {
+      observer.observe(statsSectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
 
 
@@ -130,177 +152,213 @@ const HomePage: React.FC = () => {
       {/* Clients Scroll Section */}
       <ClientsScroll />
 
-      {/* Statistics Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 cinzel text-black">
-              Unveiling Our Footprint
-            </h2>
-          </motion.div>
+             {/* Statistics Section */}
+       <section ref={statsSectionRef} className="py-20 bg-white">
+         <div className="max-w-4xl mx-auto px-4">
+           <motion.div
+             initial={{ opacity: 0, y: 30 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.8 }}
+             className="text-center mb-16"
+           >
+             <h2 className="text-4xl md:text-5xl font-bold mb-6 cinzel text-black">
+               Unveiling Our Footprint
+             </h2>
+           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="bg-white rounded-2xl border-2 border-black p-8 md:p-12"
-          >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Left Statistic */}
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-center"
-              >
-                <div className="text-4xl md:text-6xl font-bold text-black mb-2">
-                  <CountUp end={24018256} duration={2.5} separator="," />
-                </div>
-                <div className="text-lg text-gray-700 mb-4">
-                  Organic Views
-                </div>
-                <div className="flex justify-center">
-                  <div className="w-3 h-3 bg-black rounded-full animate-pulse"></div>
-                </div>
-              </motion.div>
+           <motion.div
+             initial={{ opacity: 0, scale: 0.9 }}
+             whileInView={{ opacity: 1, scale: 1 }}
+             transition={{ duration: 0.8 }}
+             className="bg-white rounded-2xl border-2 border-black p-8 md:p-12"
+           >
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+               {/* Left Statistic */}
+               <motion.div
+                 initial={{ opacity: 0, x: -30 }}
+                 whileInView={{ opacity: 1, x: 0 }}
+                 transition={{ duration: 0.6, delay: 0.2 }}
+                 className="text-center"
+               >
+                 <div className="text-4xl md:text-6xl font-bold text-black mb-2">
+                   {isCountingStarted ? (
+                     <CountUp end={24018256} duration={2.5} separator="," />
+                   ) : (
+                     "0"
+                   )}
+                 </div>
+                 <div className="text-lg text-gray-700 mb-4">
+                   Organic Views
+                 </div>
+                 <div className="flex justify-center">
+                   <div className="w-3 h-3 bg-black rounded-full animate-pulse"></div>
+                 </div>
+               </motion.div>
 
-              {/* Divider */}
-              <div className="hidden md:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-px h-16 bg-black/20"></div>
+               {/* Divider */}
+               <div className="hidden md:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-px h-16 bg-black/20"></div>
 
-              {/* Right Statistic */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-center"
-              >
-                <div className="text-4xl md:text-6xl font-bold text-black mb-2">
-                  <CountUp end={100000} duration={2.5} separator="," />+
-                </div>
-                <div className="text-lg text-gray-700 mb-4">
-                  Followers
-                </div>
-              </motion.div>
-            </div>
+               {/* Right Statistic */}
+               <motion.div
+                 initial={{ opacity: 0, x: 30 }}
+                 whileInView={{ opacity: 1, x: 0 }}
+                 transition={{ duration: 0.6, delay: 0.4 }}
+                 className="text-center"
+               >
+                 <div className="text-4xl md:text-6xl font-bold text-black mb-2">
+                   {isCountingStarted ? (
+                     <CountUp end={100000} duration={2.5} separator="," />
+                   ) : (
+                     "0"
+                   )}+
+                 </div>
+                 <div className="text-lg text-gray-700 mb-4">
+                   Followers
+                 </div>
+               </motion.div>
+             </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-center mt-8"
-            >
-              <p className="text-xl text-black font-medium">
-                and Counting
-              </p>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+             <motion.div
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.6, delay: 0.6 }}
+               className="text-center mt-8"
+             >
+               <p className="text-xl text-black font-medium">
+                 and Counting
+               </p>
+             </motion.div>
+           </motion.div>
+         </div>
+       </section>
 
-      {/* Featured Work Preview */}
-      <section className="py-20 mb-16">
-        <div className="max-w-7xl mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 cinzel">
-              Featured Work
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A glimpse into some of my most impactful projects
-            </p>
-          </motion.div>
+       {/* Collaborate Section */}
+       <section className="py-20 bg-gray-50">
+         <div className="max-w-4xl mx-auto px-4 text-center">
+           <motion.div
+             initial={{ opacity: 0, y: 30 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.8 }}
+             className="mb-12"
+           >
+             <h2 className="text-4xl md:text-5xl font-bold mb-6 cinzel text-black">
+               COLLABORATE FOR GROWTH, CONNECT NOW.
+             </h2>
+           </motion.div>
 
-          {/* Video Grid Layout */}
-          <div className="w-full flex justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl">
-              {/* Video 1 */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: -80 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                style={{ y: video1Y }}
-                className="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-42"
-              >
-                <video
-                  src={featuredVideos[0].url}
-                  className="w-full h-full object-cover"
-                  controls
-                  style={{ aspectRatio: '9/16' }}
-                />
-              </motion.div>
+                                    <motion.div
+               initial={{ opacity: 0, scale: 0.9 }}
+               whileInView={{ opacity: 1, scale: 1 }}
+               transition={{ duration: 0.8, delay: 0.2 }}
+             >
+               <button 
+                 onClick={() => {
+                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                 }}
+                 className="bg-black text-white px-12 py-4 rounded-full text-lg font-semibold hover:bg-gray-800 transition-colors duration-300 transform hover:scale-105"
+               >
+                 Schedule A Free 15 MIN Video Call Now
+               </button>
+             </motion.div>
+         </div>
+       </section>
 
-              {/* Video 2 */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 30 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                style={{ y: video2Y }}
-                className="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-42"
-              >
-                <video
-                  src={featuredVideos[1].url}
-                  className="w-full h-full object-cover"
-                  controls
-                  style={{ aspectRatio: '9/16' }}
-                />
-              </motion.div>
+             {/* Featured Work Preview */}
+       <section className="py-20 mb-16">
+         <div className="max-w-7xl mx-auto px-4">
+           <motion.div
+             initial={{ opacity: 0, y: 30 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             className="text-center mb-16"
+           >
+             <h2 className="text-4xl md:text-5xl font-bold mb-6 cinzel">
+               Featured Work
+             </h2>
+             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+               A glimpse into some of my most impactful projects
+             </p>
+           </motion.div>
 
-              {/* Video 3 */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 30 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                style={{ y: video3Y }}
-                className="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-42"
-              >
-                <video
-                  src={featuredVideos[2].url}
-                  className="w-full h-full object-cover"
-                  controls
-                  style={{ aspectRatio: '9/16' }}
-                />
-              </motion.div>
+           {/* Video Grid Layout */}
+           <div className="w-full flex justify-center">
+             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl">
+                                               {/* Video 1 */}
+                 <motion.div
+                   initial={{ opacity: 0, y: 30 }}
+                   whileInView={{ opacity: 1, y: 0 }}
+                   transition={{ duration: 0.6, delay: 0.1 }}
+                   className="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-48 transform rotate-12 -mt-8 border-4 border-black"
+                 >
+                   <video
+                     src={featuredVideos[0].url}
+                     className="w-full h-full object-cover"
+                     controls
+                     style={{ aspectRatio: '9/16' }}
+                   />
+                 </motion.div>
 
-              {/* Video 4 */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: -80 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                style={{ y: video4Y }}
-                className="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-42"
-              >
-                <video
-                  src={featuredVideos[3].url}
-                  className="w-full h-full object-cover"
-                  controls
-                  style={{ aspectRatio: '9/16' }}
-                />
-              </motion.div>
-            </div>
-          </div>
+                 {/* Video 2 */}
+                 <motion.div
+                   initial={{ opacity: 0, y: 30 }}
+                   whileInView={{ opacity: 1, y: 0 }}
+                   transition={{ duration: 0.6, delay: 0.2 }}
+                   className="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-48 transform -rotate-12 mt-8 border-4 border-black"
+                 >
+                   <video
+                     src={featuredVideos[1].url}
+                     className="w-full h-full object-cover"
+                     controls
+                     style={{ aspectRatio: '9/16' }}
+                   />
+                 </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="text-center mt-12"
-          >
-            <Link
-              to="/portfolio"
-              className="inline-flex items-center text-lg font-semibold text-gray-800 hover:text-gray-600 transition-colors"
-            >
-              View All Projects
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+                 {/* Video 3 */}
+                 <motion.div
+                   initial={{ opacity: 0, y: 30 }}
+                   whileInView={{ opacity: 1, y: 0 }}
+                   transition={{ duration: 0.6, delay: 0.3 }}
+                   className="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-48 transform rotate-12 mt-8 border-4 border-black"
+                 >
+                   <video
+                     src={featuredVideos[2].url}
+                     className="w-full h-full object-cover"
+                     controls
+                     style={{ aspectRatio: '9/16' }}
+                   />
+                 </motion.div>
+
+                 {/* Video 4 */}
+                 <motion.div
+                   initial={{ opacity: 0, y: 30 }}
+                   whileInView={{ opacity: 1, y: 0 }}
+                   transition={{ duration: 0.6, delay: 0.4 }}
+                   className="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-48 transform -rotate-12 -mt-8 border-4 border-black"
+                 >
+                   <video
+                     src={featuredVideos[3].url}
+                     className="w-full h-full object-cover"
+                     controls
+                     style={{ aspectRatio: '9/16' }}
+                   />
+                 </motion.div>
+             </div>
+           </div>
+
+           <motion.div
+             initial={{ opacity: 0 }}
+             whileInView={{ opacity: 1 }}
+             className="text-center mt-12"
+           >
+             <Link
+               to="/portfolio"
+               className="inline-flex items-center text-lg font-semibold text-gray-800 hover:text-gray-600 transition-colors"
+             >
+               View All Projects
+               <ArrowRight className="w-5 h-5 ml-2" />
+             </Link>
+           </motion.div>
+         </div>
+       </section>
 
       {/* Services Section */}
       <section id="services" className="mb-16">
@@ -317,27 +375,37 @@ const HomePage: React.FC = () => {
         <ContactPage />
       </section>
 
-      {/* Footer */}
-      <footer className="bg-white border-t mt-10">
-        <div className="max-w-7xl mx-auto px-4 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-2">
-            {/* Logo as text */}
-            <span className="font-extrabold text-2xl tracking-tight">Ediore</span>
-            <span className="ml-4 flex gap-3">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80"><svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line></svg></a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80"><svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
-            </span>
-          </div>
-          <div className="text-gray-600 text-sm flex flex-col md:flex-row items-center gap-2">
-            <span>Say Hi at <a href="mailto:anmoltypebusiness@gmail.com" className="underline hover:text-black">anmoltypebusiness@gmail.com</a></span>
-            <span className="hidden md:inline-block mx-2">|</span>
-            <a href="#" className="hover:underline">Privacy Policy</a>
-            <span className="hidden md:inline-block mx-2">|</span>
-            <a href="#" className="hover:underline">Terms of Use</a>
-          </div>
-          <div className="text-gray-400 text-xs text-center md:text-right">Designed & Developed by - Grafixcart</div>
-        </div>
-      </footer>
+             {/* Footer */}
+       <footer className="bg-white border-t mt-10">
+         <div className="max-w-7xl mx-auto px-4 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+           {/* Center - Email and Privacy Links */}
+           <div className="text-gray-600 text-sm flex flex-col md:flex-row items-center gap-2 order-2 md:order-1 justify-center">
+             <span>Say Hi at <a href="mailto:anmoltypebusiness@gmail.com" className="underline hover:text-black">anmoltypebusiness@gmail.com</a></span>
+             <span className="hidden md:inline-block mx-2">|</span>
+             <a href="#" className="hover:underline">Privacy Policy</a>
+             <span className="hidden md:inline-block mx-2">|</span>
+             <a href="#" className="hover:underline">Terms of Use</a>
+           </div>
+           
+           {/* Right - Logo and Social Icons */}
+           <div className="flex items-center gap-3 order-3">
+             <span className="font-extrabold text-2xl tracking-tight">typestudio</span>
+             <a href="https://www.instagram.com/anmol_type/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
+               <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-instagram">
+                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                 <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+               </svg>
+             </a>
+             <a href="https://www.youtube.com/@Anmol_type" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
+               <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-youtube">
+                 <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.94C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 1.94A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.94 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path>
+                 <polygon points="9.75,15.02 15.5,11.75 9.75,8.48 9.75,15.02"></polygon>
+               </svg>
+             </a>
+           </div>
+         </div>
+       </footer>
     </div>
   );
 };

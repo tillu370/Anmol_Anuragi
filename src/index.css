@@ -61,15 +61,15 @@
 @layer utilities {
   @keyframes scroll {
     0% {
-      transform: translateX(0);
+      transform: translateX(-50%);
     }
     100% {
-      transform: translateX(-50%);
+      transform: translateX(0);
     }
   }
   
   .animate-scroll {
-    animation: scroll 30s linear infinite;
+    animation: scroll 15s linear infinite;
   }
 
   @keyframes floating {
@@ -79,5 +79,54 @@
     50% {
       transform: translateY(-10px);
     }
+  }
+
+  /* Custom Triangle Cursor */
+  * {
+    cursor: none !important;
+  }
+
+  html, body {
+    cursor: none !important;
+  }
+
+  .custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease;
+  }
+
+  .cursor-triangle {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 14px solid white;
+    transform: translate(-50%, -50%);
+  }
+
+  /* Custom triangle cursor styling */
+  .cursor-triangle {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 14px solid white;
+    transform: translate(-50%, -50%) rotate(15deg);
+    transition: border-bottom-color 0.1s ease;
+  }
+
+  /* Hide cursor on interactive elements */
+  button:hover,
+  a:hover,
+  input:hover,
+  textarea:hover,
+  select:hover {
+    cursor: none;
   }
 }

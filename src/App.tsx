@@ -6,12 +6,14 @@ import HomePage from './components/HomePage';
 import Dashboard from './components/Dashboard';
 import TubelightNavbarDemo from './components/TubelightNavbarDemo';
 import NewNavigation from './components/NewNavigation';
+import CustomCursor from './components/CustomCursor';
 import './App.css';
 
 function App() {
   return (
     <Router>
       <div className="App">
+        <CustomCursor />
         <NewNavigation />
         <AnimatePresence mode="wait">
           <Routes>
