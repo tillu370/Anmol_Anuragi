@@ -54,21 +54,21 @@ const ServicesPage: React.FC = () => {
   return (
     <div className="min-h-screen pt-16">
       {/* My Process Section Only */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="py-12 md:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-center mb-16"
+            className="text-center mb-12 md:mb-16"
           >
             <div className="flex items-center justify-center mb-6">
-              <h2 className="text-4xl md:text-5xl font-bold cinzel">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold cinzel px-4">
                 Streamlined Steps To Skyrocket Your Brand!
               </h2>
             </div>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
             {[
                              { 
                  step: '01', 
@@ -98,32 +98,32 @@ const ServicesPage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -10, scale: 1.02 }}
-                className="bg-white rounded-3xl p-8 text-gray-800 relative overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-black"
-                style={{ minHeight: '450px' }}
+                className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 text-gray-800 relative overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-black"
+                style={{ minHeight: '400px' }}
               >
                 {/* Step Number and Icon */}
-                <div className="flex items-center mb-8 relative z-10">
-                  <div className="w-16 h-16 bg-black rounded-2xl flex items-center justify-center mr-6 shadow-lg">
-                    <span className="text-2xl font-bold text-white">{process.step}</span>
+                <div className="flex items-center mb-6 md:mb-8 relative z-10">
+                  <div className="w-12 h-12 md:w-16 md:h-16 bg-black rounded-xl md:rounded-2xl flex items-center justify-center mr-4 md:mr-6 shadow-lg">
+                    <span className="text-lg md:text-2xl font-bold text-white">{process.step}</span>
                   </div>
-                  <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center shadow-md">
-                    <process.icon className="w-6 h-6 text-gray-800" />
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-gray-100 rounded-lg md:rounded-xl flex items-center justify-center shadow-md">
+                    <process.icon className="w-5 h-5 md:w-6 md:h-6 text-gray-800" />
                   </div>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-bold mb-6 text-gray-800 relative z-10">{process.title}</h3>
+                <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-gray-800 relative z-10">{process.title}</h3>
 
                 {/* Description */}
-                <p className="text-gray-600 text-base leading-relaxed mb-8 relative z-10">{process.description}</p>
+                <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-6 md:mb-8 relative z-10">{process.description}</p>
 
                                  {/* Avatar at bottom */}
-                 <div className={`absolute -right-2 w-45 h-45 flex items-end justify-end relative z-10 ${
-                   process.step === '01' ? '-bottom-32' : 
-                   process.step === '02' ? '-bottom-32' : 
-                   '-bottom-28'
+                 <div className={`absolute -right-2 w-32 h-32 md:w-45 md:h-45 flex items-end justify-end relative z-10 ${
+                   process.step === '01' ? '-bottom-20 md:-bottom-32' : 
+                   process.step === '02' ? '-bottom-20 md:-bottom-32' : 
+                   '-bottom-16 md:-bottom-28'
                  }`}>
-                   <img src={process.avatar} alt="Avatar" className="w-45 h-45 object-contain" />
+                   <img src={process.avatar} alt="Avatar" className="w-32 h-32 md:w-45 md:h-45 object-contain" />
                  </div>
 
                 {/* Decorative elements */}

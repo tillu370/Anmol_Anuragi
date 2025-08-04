@@ -153,15 +153,15 @@ const HomePage: React.FC = () => {
       <ClientsScroll />
 
              {/* Statistics Section */}
-       <section ref={statsSectionRef} className="py-20 bg-white">
-         <div className="max-w-4xl mx-auto px-4">
+       <section ref={statsSectionRef} className="py-12 md:py-20 bg-white">
+         <div className="max-w-4xl mx-auto px-4 sm:px-6">
            <motion.div
              initial={{ opacity: 0, y: 30 }}
              whileInView={{ opacity: 1, y: 0 }}
              transition={{ duration: 0.8 }}
-             className="text-center mb-16"
+             className="text-center mb-12 md:mb-16"
            >
-             <h2 className="text-4xl md:text-5xl font-bold mb-6 cinzel text-black">
+             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 cinzel text-black px-4">
                Unveiling Our Footprint
              </h2>
            </motion.div>
@@ -170,9 +170,9 @@ const HomePage: React.FC = () => {
              initial={{ opacity: 0, scale: 0.9 }}
              whileInView={{ opacity: 1, scale: 1 }}
              transition={{ duration: 0.8 }}
-             className="bg-white rounded-2xl border-2 border-black p-8 md:p-12"
+             className="bg-white rounded-xl md:rounded-2xl border-2 border-black p-6 md:p-8 lg:p-12"
            >
-             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                {/* Left Statistic */}
                <motion.div
                  initial={{ opacity: 0, x: -30 }}
@@ -180,14 +180,14 @@ const HomePage: React.FC = () => {
                  transition={{ duration: 0.6, delay: 0.2 }}
                  className="text-center"
                >
-                 <div className="text-4xl md:text-6xl font-bold text-black mb-2">
+                 <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-2">
                    {isCountingStarted ? (
                      <CountUp end={24018256} duration={2.5} separator="," />
                    ) : (
                      "0"
                    )}
                  </div>
-                 <div className="text-lg text-gray-700 mb-4">
+                 <div className="text-base md:text-lg text-gray-700 mb-4">
                    Organic Views
                  </div>
                  <div className="flex justify-center">
@@ -205,14 +205,14 @@ const HomePage: React.FC = () => {
                  transition={{ duration: 0.6, delay: 0.4 }}
                  className="text-center"
                >
-                 <div className="text-4xl md:text-6xl font-bold text-black mb-2">
+                 <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-2">
                    {isCountingStarted ? (
                      <CountUp end={100000} duration={2.5} separator="," />
                    ) : (
                      "0"
                    )}+
                  </div>
-                 <div className="text-lg text-gray-700 mb-4">
+                 <div className="text-base md:text-lg text-gray-700 mb-4">
                    Followers
                  </div>
                </motion.div>
@@ -224,7 +224,7 @@ const HomePage: React.FC = () => {
                transition={{ duration: 0.6, delay: 0.6 }}
                className="text-center mt-8"
              >
-               <p className="text-xl text-black font-medium">
+               <p className="text-lg md:text-xl text-black font-medium">
                  and Counting
                </p>
              </motion.div>
@@ -233,15 +233,15 @@ const HomePage: React.FC = () => {
        </section>
 
        {/* Collaborate Section */}
-       <section className="py-20 bg-gray-50">
-         <div className="max-w-4xl mx-auto px-4 text-center">
+       <section className="py-12 md:py-20 bg-gray-50">
+         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
            <motion.div
              initial={{ opacity: 0, y: 30 }}
              whileInView={{ opacity: 1, y: 0 }}
              transition={{ duration: 0.8 }}
-             className="mb-12"
+             className="mb-8 md:mb-12"
            >
-             <h2 className="text-4xl md:text-5xl font-bold mb-6 cinzel text-black">
+             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 cinzel text-black px-4">
                COLLABORATE FOR GROWTH, CONNECT NOW.
              </h2>
            </motion.div>
@@ -255,7 +255,7 @@ const HomePage: React.FC = () => {
                  onClick={() => {
                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                  }}
-                 className="bg-black text-white px-12 py-4 rounded-full text-lg font-semibold hover:bg-gray-800 transition-colors duration-300 transform hover:scale-105"
+                 className="bg-black text-white px-6 md:px-12 py-3 md:py-4 rounded-full text-sm md:text-lg font-semibold hover:bg-gray-800 transition-colors duration-300 transform hover:scale-105"
                >
                  Schedule A Free 15 MIN Video Call Now
                </button>
@@ -264,30 +264,30 @@ const HomePage: React.FC = () => {
        </section>
 
              {/* Featured Work Preview */}
-       <section className="py-20 mb-16">
-         <div className="max-w-7xl mx-auto px-4">
+       <section className="py-12 md:py-20 mb-16">
+         <div className="max-w-7xl mx-auto px-4 sm:px-6">
            <motion.div
              initial={{ opacity: 0, y: 30 }}
              whileInView={{ opacity: 1, y: 0 }}
-             className="text-center mb-16"
+             className="text-center mb-12 md:mb-16"
            >
-             <h2 className="text-4xl md:text-5xl font-bold mb-6 cinzel">
+             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 cinzel px-4">
                Featured Work
              </h2>
-             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
                A glimpse into some of my most impactful projects
              </p>
            </motion.div>
 
            {/* Video Grid Layout */}
            <div className="w-full flex justify-center">
-             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl">
+             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 max-w-4xl">
                                                {/* Video 1 */}
                  <motion.div
                    initial={{ opacity: 0, y: 30 }}
                    whileInView={{ opacity: 1, y: 0 }}
                    transition={{ duration: 0.6, delay: 0.1 }}
-                   className="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-48 transform rotate-12 -mt-8 border-4 border-black"
+                   className="aspect-[9/16] bg-black rounded-xl md:rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-40 md:max-w-48 transform rotate-6 md:rotate-12 -mt-4 md:-mt-8 border-2 md:border-4 border-black"
                  >
                    <video
                      src={featuredVideos[0].url}
@@ -302,7 +302,7 @@ const HomePage: React.FC = () => {
                    initial={{ opacity: 0, y: 30 }}
                    whileInView={{ opacity: 1, y: 0 }}
                    transition={{ duration: 0.6, delay: 0.2 }}
-                   className="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-48 transform -rotate-12 mt-8 border-4 border-black"
+                   className="aspect-[9/16] bg-black rounded-xl md:rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-40 md:max-w-48 transform -rotate-6 md:-rotate-12 mt-4 md:mt-8 border-2 md:border-4 border-black"
                  >
                    <video
                      src={featuredVideos[1].url}
@@ -317,7 +317,7 @@ const HomePage: React.FC = () => {
                    initial={{ opacity: 0, y: 30 }}
                    whileInView={{ opacity: 1, y: 0 }}
                    transition={{ duration: 0.6, delay: 0.3 }}
-                   className="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-48 transform rotate-12 mt-8 border-4 border-black"
+                   className="aspect-[9/16] bg-black rounded-xl md:rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-40 md:max-w-48 transform rotate-6 md:rotate-12 mt-4 md:mt-8 border-2 md:border-4 border-black"
                  >
                    <video
                      src={featuredVideos[2].url}
@@ -332,7 +332,7 @@ const HomePage: React.FC = () => {
                    initial={{ opacity: 0, y: 30 }}
                    whileInView={{ opacity: 1, y: 0 }}
                    transition={{ duration: 0.6, delay: 0.4 }}
-                   className="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-48 transform -rotate-12 -mt-8 border-4 border-black"
+                   className="aspect-[9/16] bg-black rounded-xl md:rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-40 md:max-w-48 transform -rotate-6 md:-rotate-12 -mt-4 md:-mt-8 border-2 md:border-4 border-black"
                  >
                    <video
                      src={featuredVideos[3].url}

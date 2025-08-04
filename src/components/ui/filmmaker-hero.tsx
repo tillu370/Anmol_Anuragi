@@ -21,7 +21,7 @@ const FilmmakerHero: React.FC = () => {
           initial={{ opacity: 0, y: -150, rotate: -3 }}
           animate={{ opacity: 1, y: 0, rotate: 12 }}
           transition={{ duration: 2.4, delay: 0.3, ease: [0.23, 0.86, 0.39, 0.96] }}
-          className="absolute left-[-10%] md:left-[-5%] top-[15%] md:top-[20%]"
+          className="absolute left-[-10%] md:left-[-5%] top-[15%] md:top-[20%] hidden md:block"
         >
           <motion.div
             animate={{ y: [0, 15, 0] }}
@@ -44,7 +44,7 @@ const FilmmakerHero: React.FC = () => {
           initial={{ opacity: 0, y: -150, rotate: 15 }}
           animate={{ opacity: 1, y: 0, rotate: -15 }}
           transition={{ duration: 2.4, delay: 0.5, ease: [0.23, 0.86, 0.39, 0.96] }}
-          className="absolute right-[-5%] md:right-[0%] top-[70%] md:top-[75%]"
+          className="absolute right-[-5%] md:right-[0%] top-[70%] md:top-[75%] hidden md:block"
         >
           <motion.div
             animate={{ y: [0, 15, 0] }}
@@ -67,7 +67,7 @@ const FilmmakerHero: React.FC = () => {
           initial={{ opacity: 0, y: -150, rotate: 8 }}
           animate={{ opacity: 1, y: 0, rotate: -8 }}
           transition={{ duration: 2.4, delay: 0.4, ease: [0.23, 0.86, 0.39, 0.96] }}
-          className="absolute left-[5%] md:left-[10%] bottom-[5%] md:bottom-[10%]"
+          className="absolute left-[5%] md:left-[10%] bottom-[5%] md:bottom-[10%] hidden md:block"
         >
           <motion.div
             animate={{ y: [0, 15, 0] }}
@@ -88,16 +88,16 @@ const FilmmakerHero: React.FC = () => {
       </div>
 
       <div className="relative z-10 container mx-auto px-4 md:px-6">
-        <div className="max-w-4xl mx-auto text-center mt-16">
+        <div className="max-w-4xl mx-auto text-center mt-8 md:mt-16">
           <motion.div
             custom={0}
             variants={fadeUpVariants}
             initial="hidden"
             animate="visible"
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-8 md:mb-12"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-6 md:mb-12"
           >
             <Circle className="h-2 w-2 fill-rose-500/80" />
-                         <span className="text-sm text-white/60 tracking-wide">
+                         <span className="text-xs md:text-sm text-white/60 tracking-wide">
                Professional Video Editor
              </span>
           </motion.div>
@@ -108,18 +108,18 @@ const FilmmakerHero: React.FC = () => {
             initial="hidden"
             animate="visible"
           >
-                         <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 md:mb-8 tracking-tight">
-                               <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80 text-3xl sm:text-4xl md:text-5xl font-bold">
+                         <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 md:mb-8 tracking-tight px-4">
+                               <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
                   Grow your
                 </span>
                <br />
                                <span className={cn(
-                  "bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 text-5xl sm:text-7xl md:text-9xl font-bold whitespace-nowrap"
+                  "bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 text-3xl sm:text-5xl md:text-7xl lg:text-9xl font-bold whitespace-nowrap"
                 )}>
                   Personal Brand
                 </span>
                <br />
-                               <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80 text-3xl sm:text-4xl md:text-5xl font-bold whitespace-nowrap">
+                               <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80 text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold whitespace-nowrap">
                   With Dynamic,High-Quality Video Content
                 </span>
              </h1>
@@ -136,10 +136,10 @@ const FilmmakerHero: React.FC = () => {
           >
             <Link
               to="/contact"
-              className="border-2 border-white/30 text-white px-12 py-4 rounded-lg font-semibold hover:bg-white/10 transition-all duration-300 flex items-center justify-center backdrop-blur-md"
+              className="border-2 border-white/30 text-white px-6 md:px-12 py-3 md:py-4 rounded-lg font-semibold hover:bg-white/10 transition-all duration-300 flex items-center justify-center backdrop-blur-md text-sm md:text-base"
             >
               Schedule 15Min Google Meet
-              <ArrowRight className="w-5 h-5 ml-2" />
+              <ArrowRight className="w-4 h-4 md:w-5 md:h-5 ml-2" />
             </Link>
           </motion.div>
         </div>
