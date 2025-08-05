@@ -77,18 +77,19 @@ const ClientsScroll: React.FC = () => {
                   href={client.instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="cursor-pointer"
+                  className="cursor-pointer group"
                >
                  <div className={cn(
-                   "w-40 h-40 rounded-full overflow-hidden border-2",
+                   "w-40 h-40 rounded-full border-2 relative overflow-hidden",
                    client.borderColor,
-                   "hover:scale-105 transition-transform duration-300"
+                   "hover:shadow-lg transition-all duration-300"
                  )}>
                    <img
                      src={client.image}
                      alt={client.name}
-                     className="w-full h-full object-cover"
+                     className="w-full h-full object-cover rounded-full transition-all duration-300"
                    />
+                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 rounded-full"></div>
                  </div>
                 </a>
                 <div className="mt-3 text-center">
@@ -107,18 +108,19 @@ const ClientsScroll: React.FC = () => {
                   href={client.instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="cursor-pointer"
+                  className="cursor-pointer group"
                >
                  <div className={cn(
-                   "w-40 h-40 rounded-full overflow-hidden border-2",
+                   "w-40 h-40 rounded-full border-2 relative overflow-hidden",
                    client.borderColor,
-                   "hover:scale-105 transition-transform duration-300"
+                   "hover:shadow-lg transition-all duration-300"
                  )}>
                    <img
                      src={client.image}
                      alt={client.name}
-                     className="w-full h-full object-cover"
+                     className="w-full h-full object-cover rounded-full transition-all duration-300"
                    />
+                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 rounded-full"></div>
                  </div>
                 </a>
                  <div className="mt-3 text-center">

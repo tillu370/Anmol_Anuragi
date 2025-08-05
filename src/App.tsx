@@ -7,6 +7,8 @@ import Dashboard from './components/Dashboard';
 import TubelightNavbarDemo from './components/TubelightNavbarDemo';
 import NewNavigation from './components/NewNavigation';
 import CustomCursor from './components/CustomCursor';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import TermsConditions from './components/TermsConditions';
 import './App.css';
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
             <Route path="/home" element={<HomePage />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/tubelight-demo" element={<TubelightNavbarDemo />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-conditions" element={<TermsConditions />} />
           </Routes>
         </AnimatePresence>
       </div>

@@ -68,7 +68,7 @@ const ServicesPage: React.FC = () => {
             </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto overflow-visible">
             {[
                              { 
                  step: '01', 
@@ -98,7 +98,7 @@ const ServicesPage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -10, scale: 1.02 }}
-                className="bg-white rounded-xl md:rounded-2xl lg:rounded-3xl p-4 md:p-6 lg:p-8 text-gray-800 relative overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-black"
+                className="bg-white rounded-xl md:rounded-2xl lg:rounded-3xl p-4 md:p-6 lg:p-8 text-gray-800 relative overflow-visible shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-black"
                 style={{ minHeight: '350px' }}
               >
                 {/* Step Number and Icon */}
@@ -118,12 +118,8 @@ const ServicesPage: React.FC = () => {
                 <p className="text-gray-600 text-xs md:text-sm lg:text-base leading-relaxed mb-4 md:mb-6 lg:mb-8 relative z-10">{process.description}</p>
 
                                  {/* Avatar at bottom */}
-                 <div className={`absolute -right-2 w-24 h-24 md:w-32 md:h-32 lg:w-45 lg:h-45 flex items-end justify-end relative z-10 ${
-                   process.step === '01' ? '-bottom-16 md:-bottom-20 lg:-bottom-32' : 
-                   process.step === '02' ? '-bottom-16 md:-bottom-20 lg:-bottom-32' : 
-                   '-bottom-12 md:-bottom-16 lg:-bottom-28'
-                 }`}>
-                   <img src={process.avatar} alt="Avatar" className="w-24 h-24 md:w-32 md:h-32 lg:w-45 lg:h-45 object-contain" />
+                 <div className="absolute -bottom-4 -right-4 w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 flex items-center justify-center relative z-10">
+                   <img src={process.avatar} alt="Avatar" className="w-full h-full object-cover" />
                  </div>
 
                 {/* Decorative elements */}

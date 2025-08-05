@@ -21,7 +21,7 @@ const testimonials = [
   {
     video: '/clientvideo4.mp4',
     quote:
-      "Ediore's video editing expertise has been game-changing for our content strategy. Their ability to transform raw footage into compelling stories while maintaining our brand identity is remarkable. The quality and creativity they bring to every project is outstanding.",
+      "Typestudio's video editing expertise has been game-changing for our content strategy. Their ability to transform raw footage into compelling stories while maintaining our brand identity is remarkable. The quality and creativity they bring to every project is outstanding.",
   },
 ];
 

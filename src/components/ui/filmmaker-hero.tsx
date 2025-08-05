@@ -98,7 +98,7 @@ const FilmmakerHero: React.FC = () => {
           >
             <Circle className="h-2 w-2 fill-rose-500/80" />
                          <span className="text-xs md:text-sm text-white/60 tracking-wide">
-               Professional Video Editor
+               Specialist Team
              </span>
           </motion.div>
 
