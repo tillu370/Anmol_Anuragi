@@ -82,13 +82,13 @@
   }
 
   /* Custom Triangle Cursor */
-  * {
+  /* * {
     cursor: none !important;
   }
 
   html, body {
     cursor: none !important;
-  }
+  } */
 
   .custom-cursor {
     position: fixed;

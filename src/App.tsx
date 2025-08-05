@@ -15,7 +15,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <CustomCursor />
+        {/* <CustomCursor /> */}
         <NewNavigation />
         <AnimatePresence mode="wait">
           <Routes>
