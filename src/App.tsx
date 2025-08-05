@@ -19,7 +19,7 @@ function App() {
         <NewNavigation />
         <AnimatePresence mode="wait">
           <Routes>
-            <Route path="/" element={<SplashScreen />} />
+            <Route path="/" element={<HomePage />} />
             <Route path="/home" element={<HomePage />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/tubelight-demo" element={<TubelightNavbarDemo />} />

@@ -33,8 +33,8 @@ const NewNavigation: React.FC = () => {
     }
   };
 
-  // Don't show navigation on splash screen
-  if (location.pathname === '/') return null;
+  // Show navigation on all pages now
+  // if (location.pathname === '/') return null;
 
   return (
     <>
