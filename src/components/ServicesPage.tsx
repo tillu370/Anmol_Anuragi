@@ -70,27 +70,27 @@ const ServicesPage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto overflow-visible">
             {[
-                             { 
-                 step: '01', 
-                 icon: Video,
-                 title: 'Share the raw videos', 
-                 description: 'Our skilled writers will extract the finest moments, ensuring your content shines brightly.',
-                 avatar: '/avatar1.png'
-               },
-               { 
-                 step: '02', 
-                 icon: Sparkles,
-                 title: 'Create a unique edit style', 
-                 description: 'Let our team of animators and video artists bring your brand to life with a bespoke style that captures its essence and captivates your audience.',
-                 avatar: '/avatar2.png'
-               },
-               { 
-                 step: '03', 
-                 icon: TrendingUp,
-                 title: 'Grow Through Packaging', 
-                 description: 'Our skilled managers and copywriters craft captivating hooks designed to halt scrolling and leave viewers mesmerized, ensuring your content commands attention.',
-                 avatar: '/avatar3.png'
-               }
+              { 
+                step: '01', 
+                icon: Video,
+                title: 'Share the raw videos', 
+                description: 'Our skilled writers will extract the finest moments, ensuring your content shines brightly.',
+                avatar: '/avatar1.webp'
+              },
+              { 
+                step: '02', 
+                icon: Sparkles,
+                title: 'Create a unique edit style', 
+                description: 'Let our team of animators and video artists bring your brand to life with a bespoke style that captures its essence and captivates your audience.',
+                avatar: '/avatar2.webp'
+              },
+              { 
+                step: '03', 
+                icon: TrendingUp,
+                title: 'Grow Through Packaging', 
+                description: 'Our skilled managers and copywriters craft captivating hooks designed to halt scrolling and leave viewers mesmerized, ensuring your content commands attention.',
+                avatar: '/avatar3.webp'
+              }
             ].map((process, index) => (
               <motion.div
                 key={process.step}
@@ -117,10 +117,10 @@ const ServicesPage: React.FC = () => {
                 {/* Description */}
                 <p className="text-gray-600 text-xs md:text-sm lg:text-base leading-relaxed mb-4 md:mb-6 lg:mb-8 relative z-10">{process.description}</p>
 
-                                 {/* Avatar at bottom */}
-                 <div className="absolute -bottom-4 -right-4 w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 flex items-center justify-center relative z-10">
-                   <img src={process.avatar} alt="Avatar" className="w-full h-full object-cover" />
-                 </div>
+                {/* Avatar at bottom */}
+                <div className={`absolute -right-4 w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 flex items-center justify-center relative z-10 ${process.step === '01' ? '-bottom-28' : '-bottom-8'}`}>
+                  <img src={process.avatar} alt="Avatar" className="w-full h-full object-cover" />
+                </div>
 
                 {/* Decorative elements */}
                 <div className="absolute top-4 right-4 w-2 h-2 bg-gray-300 rounded-full opacity-50"></div>
