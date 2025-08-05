@@ -115,7 +115,7 @@ const HomePage: React.FC = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <div id="hero">
-        <FilmmakerHero />
+      <FilmmakerHero />
       </div>
 
       {/* Fade Transition */}
@@ -263,102 +263,102 @@ const HomePage: React.FC = () => {
          </div>
        </section>
 
-             {/* Featured Work Preview */}
+      {/* Featured Work Preview */}
        <section className="py-12 md:py-20 mb-16">
          <div className="max-w-7xl mx-auto px-4 sm:px-6">
-           <motion.div
-             initial={{ opacity: 0, y: 30 }}
-             whileInView={{ opacity: 1, y: 0 }}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
              className="text-center mb-12 md:mb-16"
-           >
+          >
              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 cinzel px-4">
-               Featured Work
-             </h2>
+              Featured Work
+            </h2>
              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-               A glimpse into some of my most impactful projects
-             </p>
-           </motion.div>
+              A glimpse into some of my most impactful projects
+            </p>
+          </motion.div>
 
-                       {/* Video Grid Layout */}
-            <div className="w-full flex justify-center">
+          {/* Video Grid Layout */}
+          <div className="w-full flex justify-center">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-8 max-w-4xl">
-                                               {/* Video 1 */}
-                 <motion.div
-                   initial={{ opacity: 0, y: 30 }}
+              {/* Video 1 */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
                    whileInView={{ opacity: 1, y: 0 }}
-                   transition={{ duration: 0.6, delay: 0.1 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
                                        className="aspect-[9/16] bg-black rounded-lg md:rounded-xl lg:rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-32 md:max-w-40 lg:max-w-48 transform rotate-3 md:rotate-6 lg:rotate-12 -mt-2 md:-mt-4 lg:-mt-8 border-2 md:border-4 border-black"
-                 >
-                   <video
-                     src={featuredVideos[0].url}
-                     className="w-full h-full object-cover"
-                     controls
-                     style={{ aspectRatio: '9/16' }}
-                   />
-                 </motion.div>
+              >
+                <video
+                  src={featuredVideos[0].url}
+                  className="w-full h-full object-cover"
+                  controls
+                  style={{ aspectRatio: '9/16' }}
+                />
+              </motion.div>
 
-                 {/* Video 2 */}
-                 <motion.div
-                   initial={{ opacity: 0, y: 30 }}
+              {/* Video 2 */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
                    whileInView={{ opacity: 1, y: 0 }}
-                   transition={{ duration: 0.6, delay: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
                                        className="aspect-[9/16] bg-black rounded-lg md:rounded-xl lg:rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-32 md:max-w-40 lg:max-w-48 transform -rotate-3 md:-rotate-6 lg:-rotate-12 mt-2 md:mt-4 lg:mt-8 border-2 md:border-4 border-black"
-                 >
-                   <video
-                     src={featuredVideos[1].url}
-                     className="w-full h-full object-cover"
-                     controls
-                     style={{ aspectRatio: '9/16' }}
-                   />
-                 </motion.div>
+              >
+                <video
+                  src={featuredVideos[1].url}
+                  className="w-full h-full object-cover"
+                  controls
+                  style={{ aspectRatio: '9/16' }}
+                />
+              </motion.div>
 
-                 {/* Video 3 */}
-                 <motion.div
-                   initial={{ opacity: 0, y: 30 }}
+              {/* Video 3 */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
                    whileInView={{ opacity: 1, y: 0 }}
-                   transition={{ duration: 0.6, delay: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
                                        className="aspect-[9/16] bg-black rounded-lg md:rounded-xl lg:rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-32 md:max-w-40 lg:max-w-48 transform rotate-3 md:rotate-6 lg:rotate-12 mt-2 md:mt-4 lg:mt-8 border-2 md:border-4 border-black"
-                 >
-                   <video
-                     src={featuredVideos[2].url}
-                     className="w-full h-full object-cover"
-                     controls
-                     style={{ aspectRatio: '9/16' }}
-                   />
-                 </motion.div>
+              >
+                <video
+                  src={featuredVideos[2].url}
+                  className="w-full h-full object-cover"
+                  controls
+                  style={{ aspectRatio: '9/16' }}
+                />
+              </motion.div>
 
-                 {/* Video 4 */}
-                 <motion.div
-                   initial={{ opacity: 0, y: 30 }}
+              {/* Video 4 */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
                    whileInView={{ opacity: 1, y: 0 }}
-                   transition={{ duration: 0.6, delay: 0.4 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
                                        className="aspect-[9/16] bg-black rounded-lg md:rounded-xl lg:rounded-2xl overflow-hidden shadow-lg flex flex-col items-center justify-center max-w-32 md:max-w-40 lg:max-w-48 transform -rotate-3 md:-rotate-6 lg:-rotate-12 -mt-2 md:-mt-4 lg:-mt-8 border-2 md:border-4 border-black"
-                 >
-                   <video
-                     src={featuredVideos[3].url}
-                     className="w-full h-full object-cover"
-                     controls
-                     style={{ aspectRatio: '9/16' }}
-                   />
-                 </motion.div>
-             </div>
-           </div>
+              >
+                <video
+                  src={featuredVideos[3].url}
+                  className="w-full h-full object-cover"
+                  controls
+                  style={{ aspectRatio: '9/16' }}
+                />
+              </motion.div>
+            </div>
+          </div>
 
-           <motion.div
-             initial={{ opacity: 0 }}
-             whileInView={{ opacity: 1 }}
-             className="text-center mt-12"
-           >
-             <Link
-               to="/portfolio"
-               className="inline-flex items-center text-lg font-semibold text-gray-800 hover:text-gray-600 transition-colors"
-             >
-               View All Projects
-               <ArrowRight className="w-5 h-5 ml-2" />
-             </Link>
-           </motion.div>
-         </div>
-       </section>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-center mt-12"
+          >
+            <Link
+              to="/portfolio"
+              className="inline-flex items-center text-lg font-semibold text-gray-800 hover:text-gray-600 transition-colors"
+            >
+              View All Projects
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Services Section */}
       <section id="services" className="mb-16">
