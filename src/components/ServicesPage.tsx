@@ -118,7 +118,7 @@ const ServicesPage: React.FC = () => {
                 <p className="text-gray-600 text-xs md:text-sm lg:text-base leading-relaxed mb-4 md:mb-6 lg:mb-8 relative z-10">{process.description}</p>
 
                 {/* Avatar at bottom */}
-                <div className={`absolute -right-2 md:-right-4 w-16 h-16 md:w-20 md:h-20 lg:w-28 lg:h-28 flex items-center justify-center relative z-10 ${process.step === '01' ? '-bottom-24 md:-bottom-28' : process.step === '02' ? '-bottom-20 md:-bottom-8' : '-bottom-20 md:-bottom-8'}`}>
+                <div className={`absolute -right-2 md:-right-4 w-16 h-16 md:w-20 md:h-20 lg:w-28 lg:h-28 flex items-center justify-center relative z-10 ${process.step === '01' ? 'bottom-0' : process.step === '02' ? 'bottom-0' : 'bottom-0'}`}>
                   <img src={process.avatar} alt="Avatar" className="w-full h-full object-cover" />
                 </div>
 

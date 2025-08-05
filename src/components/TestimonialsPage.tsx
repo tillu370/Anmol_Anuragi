@@ -22,7 +22,7 @@ const testimonials = [
     quote:
       "Typestudio's video editing expertise has been game-changing for our content strategy. Their ability to transform raw footage into compelling stories while maintaining our brand identity is remarkable. The quality and creativity they bring to every project is outstanding.",
     clientName: "coinwofficial",
-    clientImage: "/client5.png"
+    clientImage: "/client5.jpg"
   },
   {
     video: '/clientvideo3.mp4',
