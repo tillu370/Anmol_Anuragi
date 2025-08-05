@@ -52,15 +52,15 @@ const SplashScreen: React.FC = () => {
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-              className="w-20 h-20 md:w-24 md:h-24 mx-auto border-2 border-yellow-400/30 rounded-full flex items-center justify-center"
+              className="w-20 h-20 md:w-24 md:h-24 mx-auto border-2 border-white/30 rounded-full flex items-center justify-center"
             >
-              <Play className="w-10 h-10 md:w-12 md:h-12 text-yellow-400" />
+              <Play className="w-10 h-10 md:w-12 md:h-12 text-white" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: [0, 1, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="absolute inset-0 w-20 h-20 md:w-24 md:h-24 mx-auto border border-yellow-400 rounded-full"
+              className="absolute inset-0 w-20 h-20 md:w-24 md:h-24 mx-auto border border-white rounded-full"
             />
           </div>
         </motion.div>
@@ -70,7 +70,7 @@ const SplashScreen: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 1 }}
-          className="text-3xl md:text-4xl lg:text-6xl font-bold text-yellow-400 mb-4 cinzel"
+          className="text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-4 cinzel"
         >
           Anmol Anuragi
         </motion.h1>
@@ -92,12 +92,12 @@ const SplashScreen: React.FC = () => {
           className="w-64 md:w-80 mx-auto px-4"
         >
           <div className="flex items-center justify-between mb-2">
-            <span className="text-yellow-400 text-sm">Rebuilding the Timeline...</span>
-            <span className="text-yellow-400 text-sm">{progress}%</span>
+            <span className="text-white text-sm">Rebuilding the Timeline...</span>
+            <span className="text-white text-sm">{progress}%</span>
           </div>
           <div className="w-full h-1 bg-gray-800 rounded-full overflow-hidden">
             <motion.div
-              className="h-full bg-yellow-400"
+              className="h-full bg-white"
               initial={{ width: 0 }}
               animate={{ width: `${progress}%` }}
               transition={{ duration: 0.1 }}
