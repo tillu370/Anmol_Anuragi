@@ -14,17 +14,31 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="App bg-white min-h-screen w-full overflow-x-hidden">
         {/* <CustomCursor /> */}
-        <NewNavigation />
         <AnimatePresence mode="wait">
           <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/home" element={<HomePage />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/tubelight-demo" element={<TubelightNavbarDemo />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/terms-conditions" element={<TermsConditions />} />
+            <Route path="/" element={<SplashScreen />} />
+            <Route path="/home" element={<>
+              <NewNavigation />
+              <HomePage />
+            </>} />
+            <Route path="/dashboard" element={<>
+              <NewNavigation />
+              <Dashboard />
+            </>} />
+            <Route path="/tubelight-demo" element={<>
+              <NewNavigation />
+              <TubelightNavbarDemo />
+            </>} />
+            <Route path="/privacy-policy" element={<>
+              <NewNavigation />
+              <PrivacyPolicy />
+            </>} />
+            <Route path="/terms-conditions" element={<>
+              <NewNavigation />
+              <TermsConditions />
+            </>} />
           </Routes>
         </AnimatePresence>
       </div>

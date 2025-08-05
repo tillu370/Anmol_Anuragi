@@ -50,11 +50,11 @@ export function NavBar({ items, className, onNavigate }: NavBarProps) {
   return (
     <div
       className={cn(
-        "fixed top-0 left-4 md:left-1/2 md:-translate-x-1/2 z-50 mt-2 md:mt-4 lg:mt-6",
+        "fixed top-0 left-1/2 -translate-x-1/2 z-50 mt-2 md:mt-4 lg:mt-6",
         className,
       )}
     >
-      <div className="flex items-center gap-2 md:gap-2 lg:gap-3 bg-black/20 backdrop-blur-lg border border-white/20 py-2 md:py-2 px-2 md:px-2 rounded-full shadow-xl">
+      <div className="flex items-center gap-2 md:gap-2 lg:gap-3 bg-black/70 backdrop-blur-lg border border-white/20 py-2 md:py-2 px-2 md:px-2 rounded-full shadow-xl">
         {items.map((item) => {
           const Icon = item.icon
           const isActive = activeTab === item.name
@@ -97,4 +97,4 @@ export function NavBar({ items, className, onNavigate }: NavBarProps) {
       </div>
     </div>
   )
-} 
+}
