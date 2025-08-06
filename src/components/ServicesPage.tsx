@@ -118,12 +118,12 @@ const ServicesPage: React.FC = () => {
                 <p className="text-gray-600 text-xs md:text-sm lg:text-base leading-relaxed mb-4 md:mb-6 lg:mb-8 relative z-10">{process.description}</p>
 
                 {/* Avatar at bottom */}
-                <div className={`absolute -right-2 md:-right-4 w-16 h-16 md:w-20 md:h-20 lg:w-28 lg:h-28 flex items-center justify-center relative z-10 ${process.step === '01' ? '-bottom-28 md:-bottom-30' : process.step === '02' ? '-bottom-16 md:-bottom-8' : process.step === '03' ? '-bottom-16 md:-bottom-8' : '-bottom-20 md:-bottom-8'}`}>
-                  {/* Mobile: circle with black border, Desktop: normal */}
-                  <div className="block md:hidden w-full h-full rounded-full border-2 border-black overflow-hidden">
-                    <img src={process.avatar} alt="Avatar" className="w-full h-full object-cover" />
-                  </div>
-                  <img src={process.avatar} alt="Avatar" className="hidden md:block w-full h-full object-cover" />
+                <div className="absolute bottom-0 right-0">
+                  <img 
+                    src={process.avatar} 
+                    alt="Avatar" 
+                    className="w-16 h-16 md:w-20 md:h-20 lg:w-28 lg:h-28 object-cover" 
+                  />
                 </div>
 
                 {/* Decorative elements */}
