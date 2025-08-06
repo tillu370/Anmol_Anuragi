@@ -140,9 +140,9 @@ const FilmmakerHero: React.FC = () => {
       </div>
 
       <div className="relative z-10 container mx-auto px-4 md:px-6">
-        <div className="max-w-4xl mx-auto text-center mt-8 md:mt-16">
+        <div className="max-w-4xl mx-auto text-center mt-0 md:mt-16">
           {/* Logo above Specialist Team badge on mobile */}
-          <div className="block md:hidden flex justify-center mb-16">
+          <div className="block md:hidden flex justify-center mb-34">
             <img src="/logo.png" alt="Logo" className="h-36 w-36 object-contain" />
           </div>
           <motion.div
