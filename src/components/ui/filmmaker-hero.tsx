@@ -141,6 +141,10 @@ const FilmmakerHero: React.FC = () => {
 
       <div className="relative z-10 container mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto text-center mt-8 md:mt-16">
+          {/* Logo above Specialist Team badge on mobile */}
+          <div className="block md:hidden flex justify-center mb-16">
+            <img src="/logo.png" alt="Logo" className="h-36 w-36 object-contain" />
+          </div>
           <motion.div
             custom={0}
             variants={fadeUpVariants}
@@ -149,9 +153,9 @@ const FilmmakerHero: React.FC = () => {
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-6 md:mb-12"
           >
             <Circle className="h-2 w-2 fill-rose-500/80" />
-                         <span className="text-xs md:text-sm text-white/60 tracking-wide">
-               Specialist Team
-             </span>
+            <span className="text-xs md:text-sm text-white/60 tracking-wide">
+              Specialist Team
+            </span>
           </motion.div>
 
           <motion.div
