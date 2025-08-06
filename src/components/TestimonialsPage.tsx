@@ -61,7 +61,7 @@ function TestimonialCard({ videoSrc, quote, clientName, clientImage }: { videoSr
         </div>
       <div className="p-8 flex-1 flex flex-col justify-between">
         <Quote className="w-8 h-8 text-gray-400 mb-3" />
-        <p className="text-gray-700 text-lg leading-relaxed italic font-light tracking-wide">{quote}</p>
+        <p className="text-gray-700 text-sm md:text-lg leading-relaxed italic font-light tracking-wide text-center">{quote}</p>
         <div className="flex items-center mt-6">
           <img src={clientImage} alt={clientName} className="w-12 h-12 rounded-full object-cover mr-4" />
           <div>
@@ -76,19 +76,19 @@ function TestimonialCard({ videoSrc, quote, clientName, clientImage }: { videoSr
 const TestimonialsPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-white pt-16">
-      <section className="py-32">
+      <section className="py-16 md:py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-20"
+            className="text-center mb-10 md:mb-16 lg:mb-20"
           >
-            <h1 className="text-6xl md:text-7xl font-bold mb-8 cinzel text-gray-800">Testimonials</h1>
-            <p className="text-2xl text-gray-600 max-w-4xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 lg:mb-8 cinzel text-gray-800">Testimonials</h1>
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto">
               Trusted By Clients, Proven By Stories
             </p>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
             {testimonials.map((t, i) => (
               <TestimonialCard key={i} videoSrc={t.video} quote={t.quote} clientName={t.clientName} clientImage={t.clientImage} />
             ))}
