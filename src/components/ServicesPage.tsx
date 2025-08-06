@@ -118,7 +118,7 @@ const ServicesPage: React.FC = () => {
                 <p className="text-gray-600 text-xs md:text-sm lg:text-base leading-relaxed mb-4 md:mb-6 lg:mb-8 relative z-10">{process.description}</p>
 
                 {/* Avatar at bottom */}
-                <div className="absolute bottom-0 right-0">
+                <div className="absolute -right-2 -bottom-2 md:-right-4 md:-bottom-4 z-10">
                   <img 
                     src={process.avatar} 
                     alt="Avatar" 

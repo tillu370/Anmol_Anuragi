@@ -272,7 +272,7 @@ const ContactPage: React.FC = () => {
               {/* Calendly Widget */}
               <div className="bg-white border border-gray-200 rounded-xl p-0 md:p-4 flex flex-col items-center justify-center">
                 <h3 className="text-xl font-semibold mb-4 text-blue-800 flex items-center justify-center pt-6">Book a Call Instantly</h3>
-                <div id="calendly-inline-widget" className="calendly-inline-widget w-full" style={{ minWidth: 320, height: 700 }} data-url="https://calendly.com/tilludeals/30min"></div>
+                <div className="calendly-inline-widget w-full" style={{ minWidth: 320, height: 700 }} data-url="https://calendly.com/anmoltypebusiness/30min"></div>
               </div>
 
               {/* WhatsApp CTA */}
