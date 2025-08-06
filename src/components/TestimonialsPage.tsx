@@ -61,7 +61,7 @@ function TestimonialCard({ videoSrc, quote, clientName, clientImage }: { videoSr
         </div>
       <div className="p-8 flex-1 flex flex-col justify-between">
         <Quote className="w-8 h-8 text-gray-400 mb-3" />
-        <p className="text-gray-700 text-lg leading-relaxed">{quote}</p>
+        <p className="text-gray-700 text-lg leading-relaxed italic font-light tracking-wide">{quote}</p>
         <div className="flex items-center mt-6">
           <img src={clientImage} alt={clientName} className="w-12 h-12 rounded-full object-cover mr-4" />
           <div>

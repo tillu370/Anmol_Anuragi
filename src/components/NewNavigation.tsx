@@ -13,7 +13,8 @@ const NewNavigation: React.FC = () => {
     { name: 'Home', url: '#hero', icon: Home },
     { name: 'Services', url: '#services', icon: FileText },
     { name: 'Testimonials', url: '#testimonials', icon: Star },
-    { name: 'Contact', url: '#contact', icon: MessageCircle }
+    { name: 'Contact', url: '#contact', icon: MessageCircle },
+    { name: 'FAQ', url: '#faq', icon: User }
   ];
 
   const handleNavigate = (url: string) => {

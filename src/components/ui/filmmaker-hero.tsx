@@ -16,6 +16,58 @@ const FilmmakerHero: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
 
       <div className="absolute inset-0 overflow-hidden">
+        {/* Pixel Art Image - Left Side */}
+        <motion.div
+          initial={{ opacity: 0, x: -100, rotate: -5 }}
+          animate={{ opacity: 1, x: 0, rotate: 0 }}
+          transition={{ duration: 2.5, delay: 0.8, ease: [0.23, 0.86, 0.39, 0.96] }}
+          className="absolute left-[5%] md:left-[8%] top-[25%] md:top-[30%] hidden md:block"
+        >
+                     <motion.div
+             animate={{ y: [0, 20, 0], rotate: [0, 2, 0] }}
+             transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
+             className="relative"
+           >
+             <div className="w-40 h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-lg shadow-2xl backdrop-blur-sm">
+               <img 
+                 src="/pixel-art-1.png" 
+                 alt="Pixel Art 1" 
+                 className="w-full h-full object-contain"
+                 onError={(e) => {
+                   console.log('Error loading pixel-art-1.png');
+                   e.currentTarget.style.display = 'none';
+                 }}
+               />
+             </div>
+           </motion.div>
+        </motion.div>
+
+        {/* Pixel Art Image - Right Side */}
+        <motion.div
+          initial={{ opacity: 0, x: 100, rotate: 5 }}
+          animate={{ opacity: 1, x: 0, rotate: 0 }}
+          transition={{ duration: 2.5, delay: 1.0, ease: [0.23, 0.86, 0.39, 0.96] }}
+          className="absolute right-[5%] md:right-[8%] bottom-[25%] md:bottom-[30%] hidden md:block"
+        >
+                     <motion.div
+             animate={{ y: [0, -20, 0], rotate: [0, -2, 0] }}
+             transition={{ duration: 10, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
+             className="relative"
+           >
+             <div className="w-40 h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-lg shadow-2xl backdrop-blur-sm">
+               <img 
+                 src="/pixel-art-2.png" 
+                 alt="Pixel Art 2" 
+                 className="w-full h-full object-contain"
+                 onError={(e) => {
+                   console.log('Error loading pixel-art-2.png');
+                   e.currentTarget.style.display = 'none';
+                 }}
+               />
+             </div>
+           </motion.div>
+        </motion.div>
+
         {/* Animated shapes */}
         <motion.div
           initial={{ opacity: 0, y: -150, rotate: -3 }}
@@ -113,11 +165,11 @@ const FilmmakerHero: React.FC = () => {
                   Grow your
                 </span>
                <br />
-                               <span className={cn(
-                  "bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 text-2xl sm:text-4xl md:text-6xl lg:text-8xl font-bold"
-                )}>
-                  Personal Brand
-                </span>
+                                                               <span className={cn(
+                   "bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-[#F8F6D0] text-2xl sm:text-4xl md:text-6xl lg:text-8xl font-bold"
+                 )}>
+                   Personal Brand
+                 </span>
                <br />
                                <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80 text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold">
                   With Dynamic,High-Quality Video Content

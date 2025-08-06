@@ -32,9 +32,9 @@ const clients: Client[] = [
     id: 3,
     name: "Client 3",
     image: "/client3.jpg",
-    followers: "6,382",
+    followers: "13K",
     borderColor: "border-black",
-    instagramUrl: "https://www.instagram.com/typee_studio/reels/"
+    instagramUrl: "https://www.instagram.com/anmol_type?igsh=NWJ4ZjNjbXR1ZW91"
   },
   {
     id: 4,

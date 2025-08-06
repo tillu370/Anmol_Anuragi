@@ -281,7 +281,15 @@ const ContactPage: React.FC = () => {
                 <p className="text-green-700 mb-4">
                   For quick questions or urgent projects, message me directly on WhatsApp
                 </p>
-                <button className="bg-green-600 text-custom-beige px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+                <button 
+                  onClick={() => {
+                    const phoneNumber = '+918368399098';
+                    const message = 'Hi! I would like to discuss a video project with you.';
+                    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                    window.open(whatsappUrl, '_blank');
+                  }}
+                  className="bg-green-600 text-custom-beige px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
+                >
                   Message on WhatsApp
                 </button>
               </div>
@@ -291,7 +299,7 @@ const ContactPage: React.FC = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-32 bg-gray-50">
+      <section id="faq" className="py-32 bg-gray-50">
         <div className="max-w-5xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

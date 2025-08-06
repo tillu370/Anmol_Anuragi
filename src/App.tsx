@@ -9,6 +9,7 @@ import NewNavigation from './components/NewNavigation';
 import CustomCursor from './components/CustomCursor';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsConditions from './components/TermsConditions';
+
 import './App.css';
 
 function App() {
