@@ -349,7 +349,11 @@ const HomePage: React.FC = () => {
          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 md:py-10">
            {/* Logo Section */}
            <div className="flex justify-start mb-4">
-             <span className="font-extrabold text-lg md:text-2xl tracking-tight text-black">typestudio</span>
+             <img 
+               src="/logo.png" 
+               alt="Logo" 
+               className="h-12 md:h-16 object-contain drop-shadow-2xl shadow-black/50 bg-black p-2 rounded-lg"
+             />
            </div>
            
            {/* Thin black dividing line - full width */}
