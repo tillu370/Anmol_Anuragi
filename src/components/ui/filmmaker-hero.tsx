@@ -190,13 +190,13 @@ const FilmmakerHero: React.FC = () => {
             animate="visible"
             className="flex justify-center"
           >
-            <Link
-              to="/contact"
-              className="bg-gradient-to-r from-[#405060] via-[#A0B0C0] to-[#FFFACD] text-black px-6 md:px-12 py-3 md:py-4 rounded-lg font-semibold hover:from-[#506070] hover:via-[#B0C0D0] hover:to-[#FFF8DC] transition-all duration-300 flex items-center justify-center backdrop-blur-md text-sm md:text-base shadow-lg hover:shadow-xl"
+            <a
+              href="#contact"
+              className="bg-gradient-to-r from-[#405060] via-[#A0B0C0] to-[#FFFACD] text-black px-6 md:px-12 py-3 md:py-4 rounded-lg font-semibold hover:from-[#506070] hover:via-[#B0C0D0] hover:to-[#FFF8DC] transition-all duration-300 flex items-center justify-center backdrop-blur-md text-sm md:text-base shadow-lg hover:shadow-xl cursor-pointer"
             >
               Schedule 15Min Google Meet
               <ArrowRight className="w-4 h-4 md:w-5 md:h-5 ml-2" />
-            </Link>
+            </a>
           </motion.div>
         </div>
       </div>
