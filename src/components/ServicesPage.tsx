@@ -118,11 +118,11 @@ const ServicesPage: React.FC = () => {
                 <p className="text-gray-600 text-xs md:text-sm lg:text-base leading-relaxed mb-4 md:mb-6 lg:mb-8 relative z-10">{process.description}</p>
 
                 {/* Avatar at bottom */}
-                <div className="absolute -right-2 -bottom-2 md:-right-4 md:-bottom-4 z-10">
+                <div className="absolute right-0 bottom-0 z-10">
                   <img 
                     src={process.avatar} 
                     alt="Avatar" 
-                    className="w-16 h-16 md:w-20 md:h-20 lg:w-28 lg:h-28 object-cover" 
+                    className="w-16 h-16 md:w-20 md:h-20 lg:w-28 lg:h-28 object-cover translate-x-1/3 translate-y-1/3" 
                   />
                 </div>
 
