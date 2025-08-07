@@ -98,7 +98,7 @@ const ServicesPage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -10, scale: 1.02 }}
-                className="bg-white rounded-xl md:rounded-2xl lg:rounded-3xl p-4 md:p-6 lg:p-8 text-gray-800 relative overflow-visible shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-black"
+                className="bg-white rounded-xl md:rounded-2xl lg:rounded-3xl p-4 md:p-6 lg:p-8 text-gray-800 relative overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-black"
                 style={{ minHeight: '350px' }}
               >
                 {/* Step Number and Icon */}
@@ -118,7 +118,7 @@ const ServicesPage: React.FC = () => {
                 <p className="text-gray-600 text-xs md:text-sm lg:text-base leading-relaxed mb-4 md:mb-6 lg:mb-8 relative z-10">{process.description}</p>
 
                 {/* Avatar at bottom */}
-                <div className="absolute -right-2 -bottom-2 z-10">
+                <div className="absolute right-0 bottom-0 z-10">
                   <img 
                     src={process.avatar} 
                     alt="Avatar" 
