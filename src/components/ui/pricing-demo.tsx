@@ -9,11 +9,11 @@ const demoPlans = [
     yearlyPrice: "1199",
     period: "per month",
     features: [
+      "15 Videos Package Per Month",
       "World - class editor",
       "Personalized video branding",
       "Pause or cancel anytime",
       "24/7 Chat support",
-      "Dedicated social media manager",
       "Unlimited Revisions",
       "Monthly Growth Reports"
     ],
@@ -30,7 +30,7 @@ const demoPlans = [
     features: [
       "Everything you get in Basic Plus",
       "Expert animator",
-      "Organic lead generation",
+      "15 inspirational and personal designed posts",
       "Automation setup"
     ],
     description: "Best for creators/brands serious about organic growth",
