@@ -9,7 +9,7 @@ const demoPlans = [
     yearlyPrice: "1199",
     period: "month",
     features: [
-      "15 Videos Package Per Month",
+      "15 Videos Package/Month",
       "World - class editor",
       "Personalized video branding",
       "Pause or cancel anytime",
