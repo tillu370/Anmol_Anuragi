@@ -18,11 +18,11 @@ const pricingPlans: PricingPlan[] = [
     price: "$1499",
     videos: "15 short videos",
     features: [
+      "15 Videos Package Per Month",
       "World-class editor",
       "Personalized video branding",
       "Pause or cancel anytime",
       "24/7 Chat support",
-      "Dedicated social media manager",
       "Unlimited Revisions",
       "Monthly Growth Reports"
     ],
@@ -35,7 +35,7 @@ const pricingPlans: PricingPlan[] = [
     features: [
       "Everything you get in Basic Plus",
       "Expert animator",
-      "Organic lead generation",
+      "15 inspirational and personal designed posts",
       "Automation setup"
     ],
     targetAudience: "Best for creators/brands serious about organic growth",
