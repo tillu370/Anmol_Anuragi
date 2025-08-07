@@ -7,7 +7,7 @@ const demoPlans = [
     name: "Basic",
     price: "1499",
     yearlyPrice: "1199",
-    period: "per month",
+    period: "month",
     features: [
       "15 Videos Package Per Month",
       "World - class editor",
@@ -26,7 +26,7 @@ const demoPlans = [
     name: "Growth",
     price: "1799",
     yearlyPrice: "1439",
-    period: "per month",
+    period: "month",
     features: [
       "Everything you get in Basic Plus",
       "Expert animator",
