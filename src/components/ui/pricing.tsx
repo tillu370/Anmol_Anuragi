@@ -7,7 +7,7 @@ import { useMediaQuery } from "../../hooks/use-media-query";
 import { cn } from "../../lib/utils";
 import { motion } from "framer-motion";
 import { Check, Star } from "lucide-react";
-import { Link } from "react-router-dom";
+
 import { useState, useRef } from "react";
 import confetti from "canvas-confetti";
 import NumberFlow from "@number-flow/react";
@@ -186,8 +186,10 @@ export function Pricing({
 
               <hr className="w-full my-4" />
 
-              <Link
-                to={plan.href}
+              <button
+                onClick={() => {
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                }}
                 className={cn(
                   buttonVariants({
                     variant: "outline",
@@ -200,7 +202,7 @@ export function Pricing({
                 )}
               >
                 {plan.buttonText}
-              </Link>
+              </button>
               <p className="mt-6 text-xs leading-5 text-muted-foreground">
                 {plan.description}
               </p>
