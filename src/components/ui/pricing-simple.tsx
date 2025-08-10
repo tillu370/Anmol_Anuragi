@@ -98,7 +98,12 @@ export function PricingSimple() {
                 <div className="text-center">
                   <p className="text-lg mb-4">Need A Custom Plan?</p>
                                      <hr className="border-gray-300 mb-6" />
-                   <button className="w-full bg-gray-800 hover:bg-gray-900 text-white font-semibold py-3 px-6 rounded-lg transition-colors">
+                   <button 
+                     onClick={() => {
+                       document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                     }}
+                     className="w-full bg-gray-800 hover:bg-gray-900 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+                   >
                      Book A Call
                    </button>
                 </div>
@@ -114,7 +119,12 @@ export function PricingSimple() {
                    </ul>
 
                   <div className="text-center">
-                                       <button className="w-full bg-gray-800 hover:bg-gray-900 text-white font-semibold py-3 px-6 rounded-lg transition-colors mb-4">
+                                       <button 
+                                         onClick={() => {
+                                           document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                                         }}
+                                         className="w-full bg-gray-800 hover:bg-gray-900 text-white font-semibold py-3 px-6 rounded-lg transition-colors mb-4"
+                                       >
                      Book A Call
                    </button>
                    <p className="text-xs text-amber-600">{plan.targetAudience}</p>

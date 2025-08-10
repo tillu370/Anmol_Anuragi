@@ -19,7 +19,7 @@ const demoPlans = [
     ],
     description: "Best for coaches/online trainers",
     buttonText: "Book A Call",
-    href: "/contact",
+    href: "#contact",
     isPopular: false,
   },
   {
@@ -35,7 +35,7 @@ const demoPlans = [
     ],
     description: "Best for creators/brands serious about organic growth",
     buttonText: "Book A Call",
-    href: "/contact",
+    href: "#contact",
     isPopular: true,
   },
   {
@@ -46,7 +46,7 @@ const demoPlans = [
     features: [],
     description: "Need A Custom Plan?",
     buttonText: "Book A Call",
-    href: "/contact",
+    href: "#contact",
     isPopular: false,
   },
 ];
