@@ -24,13 +24,6 @@ const testimonials = [
     clientName: "coinwofficial",
     clientImage: "/client5.jpg"
   },
-  {
-    video: '/clientvideo3.mp4',
-    quote:
-      "Before I started working with them, I was doing all my edits myself. And honestly? It was draining. I was spending hours on editing when I should've been focusing on shooting, scripting, or engaging with my audience. I needed help — but not just any help. I needed someone who understood content creation. Someone who knew what hooks, jump cuts, B-roll, and pacing meant in the context of growing a YouTube channel",
-    clientName: "ambitio.club",
-    clientImage: "/client4.jpg"
-  },
 ];
 
 function TestimonialCard({ videoSrc, quote, clientName, clientImage }: { videoSrc: string; quote: string; clientName: string; clientImage: string }) {

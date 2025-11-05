@@ -316,7 +316,7 @@ const ContactPage: React.FC = () => {
             {[
               {
                 q: 'What is your typical turnaround time?',
-                a: 'Turnaround time varies by project complexity. Simple edits: 3-5 days, complex projects: 2-3 weeks. Rush jobs available for additional fee.'
+                a: 'Turnaround time varies by project complexity. Simple edits: 48Hours, complex projects:1 week. Rush jobs available for additional fee.'
               },
               {
                 q: 'Do you work with clients remotely?',
